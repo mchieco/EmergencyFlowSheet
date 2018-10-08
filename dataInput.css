@@ -1,12 +1,4 @@
 /*Created by Matt Chieco, Eamon Duffy, Kyle Gorman SER 360*/
-
-input[type=text]{
-  width: 20%;
-  padding-left: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-
 label {
   width: 200px;
   float: left;
