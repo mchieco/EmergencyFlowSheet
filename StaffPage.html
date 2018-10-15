@@ -26,9 +26,47 @@
 
 <body>
 
-  <script type = "text/javascript">
-
-  </script>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Time</th>
+        <th scope="col">Rhythm</th>
+        <th scope="col">Medication</th>
+        <th scope="col">Dose</th>
+        <th scope="col">IV</th>
+        <th scope="col">Defib Joules</th>
+        <th scope="col">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td></td>    
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td colspan="2"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
   <form>
     Reason Resuscitation Ended:<br>
@@ -44,9 +82,41 @@
     Time: <br>
     <input type="time" name="time"><br>
     <br>
-    <input type="submit" value="Edit">
-    <input type="submit" value="Submit">
   </form>
+
+  <button id ="edit_btn">Edit</button>
+  <button id="submit_btn">Submit</button>
+
+  <script type = "text/javascript">
+
+  //gets elements
+  var submit = document.getElementById("submit_btn");
+  var edit = document.getElementById("edit_btn");
+
+  //click listender for each button
+  if (submit.addEventListener) {
+    submit.addEventListener("click", function() {
+      //sends to the confirm page
+      window.location = 'confirmPage.html';
+    }, false);
+  } else {
+    submit.attachEvent("onclick", function() {
+      //does nothing
+    });
+  }
+
+  if (edit.addEventListener) {
+    edit.addEventListener("click", function() {
+      //sends back to data input
+      window.location = 'DataInput.html';
+    }, false);
+  } else {
+    edit.attachEvent("onclick", function() {
+      //does nothing
+    });
+  }
+
+</script>
 
 
 </body>
