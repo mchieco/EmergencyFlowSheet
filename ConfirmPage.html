@@ -29,49 +29,49 @@
         <div class="boxed">
             <form>
                 Date:
-                <input type="date" name="date">
+                <input type="date" name="date" required>
             </form>
             <form>
                 Time:
-                <input type="time" id="myTime">
+                <input type="time" id="myTime" required>
             </form>
             <form>
                 Location:
-                <input type="text" name="Location">
+                <input type="text" name="Location" required>
             </form>
         </div>
         <div class='boxed'>
             <form>
                 Cardiac Arrest MD:
-                <input type="text" name="MD">
+                <input type="text" name="MD" required>
             </form>
             <form>
                 Anesthesiologist:
-                <input type="text" name="Anesthesiologist">
+                <input type="text" name="Anesthesiologist" required>
             </form>
             <form>
                 Recording Nurse:
-                <input type="text" name="RecNurse">
+                <input type="text" name="RecNurse" required>
             </form>
         </div>
         <div class="boxed">
             <form>
                 Medical Preperation Nurse:
-                <input type="text" name="MedPrep">
+                <input type="text" name="MedPrep" required>
             </form>
             <form>
                 Other:
-                <input type="text" name="Other">
+                <input type="text" name="Other" required>
             </form>
         </div>
         <div class="boxed">
             <form>
                 Patient Name:
-                <input type="text" name="PatientName">
+                <input type="text" name="PatientName" required>
             </form>
             <form>
                 MR#
-                <input type="text" name="MR#">
+                <input type="text" name="MR#" required>
             </form>
         </div>
 
@@ -179,13 +179,16 @@
         <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
         <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
         <br>
-        <input type="radio" name="family_notified" value="family_notified"> Family Notified <br>
-        <input type="radio" name="family_notified_event" value="family_notified_event"> of Event <br>
-        <input type="radio" name="family_notified_outcome" value="family_notified_outcome"> of Outcome <br>
+        <input type="checkbox" id="family_notified" value="family_notified" required> Family Notified <br>
+        <input type="checkbox" id="family_notified_event" value="family_notified_event" required> of Event <br>
+        <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome <br>
         Time: <br>
-        <input type="time" name="time"><br>
+        <input type="time" name="time" required><br>
         <br>
     </form>
+    <div class="submit_btn">
+        <input type="submit" value=" Submit " />
+      </div>
     <div class="footer">
         <p>Quinnipiac University Emergency Flow Sheet</p>
     </div>

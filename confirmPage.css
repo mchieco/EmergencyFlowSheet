@@ -32,3 +32,7 @@ body {
   .boxed > form > input {
       width: 100%;
   }
+
+.submit_btn{
+text-align: center;
+}
