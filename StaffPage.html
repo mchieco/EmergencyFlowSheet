@@ -13,15 +13,16 @@
 
   <title>Staff Page</title>
   <meta name="description" content="Students Page">
-  <meta name="author" content="Mattc">
+  <meta name="author" content="KyleG">
 
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="staffPage.css" />
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
   crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
   crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -68,83 +69,27 @@
     </tbody>
   </table>
 
-  <form>
+  <form action="ConfirmPage.html" method="POST">
+>
     Reason Resuscitation Ended:<br>
-    <input type="radio" id="reason" name = "reason" value="circualtion_returned"> Return of Circulation<br>
-    <input type="radio" id="reason" name = "reason" value="family_restrictions"> Restrictions by Family<br>
-    <input type="radio" id="reason" name = "reason"value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
-    <input type="radio" id="reason" name = "reason" value="medical_futility"> Medical Futility <br>
-    <input type="radio" id="reason" name = "reason" value="advance_directive"> Advance Directive <br>
+    <input type="radio" id="reason" name = "reason" value="circualtion_returned" required> Return of Circulation<br>
+    <input type="radio" id="reason" name = "reason" value="family_restrictions" required> Restrictions by Family<br>
+    <input type="radio" id="reason" name = "reason" value="efforts_terminated" required> Efforts Terminated (No sustained ROC) <br>
+    <input type="radio" id="reason" name = "reason" value="medical_futility" required> Medical Futility <br>
+    <input type="radio" id="reason" name = "reason" value="advance_directive" required> Advance Directive <br>
     <br>
-    <input type="radio" id="family_notified" value="family_notified"> Family Notified <br>
-    <input type="radio" id="family_notified_event" value="family_notified_event"> of Event <br>
-    <input type="radio" id="family_notified_outcome" value="family_notified_outcome"> of Outcome <br>
+    <input type="checkbox" id="family_notified" value="family_notified" required> Family Notified <br>
+    <input type="checkbox" id="family_notified_event" value="family_notified_event" required> of Event <br>
+    <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome <br>
     Time: <br>
-    <input type="time" name="time"><br>
+    <input type="time" name="time" required><br>
     <br>
+    <input type= "button" onclick="editFunction()" id = "edit_btn" value = "Edit">
+    <input type = "submit" id = "submit_btn" value = "Submit">
   </form>
 
-  <button id ="edit_btn">Edit</button>
-  <button id="submit_btn">Submit</button>
-
-  <script type = "text/javascript">
-
-  var radioCompleted = false;
-
-  //gets elements
-  var reason_btn = document.getElementById("reason");
-  var notified_btn = document.getElementById("family_notified");
-  var notified_event = document.getElementById("family_notified_event");
-  var notified_outcome = document.getElementById("family_notified_outcome");
-
-  var submit = document.getElementById("submit_btn");
-  var edit = document.getElementById("edit_btn");
-
-  //checks if the radio button is selected
-  function checkSelections(){
-    if (reason_btn.checked && notified_btn.checked && notified_event.checked && notified_outcome.checked) {
-      radioCompleted = true;
-    } else {
-      selectionsFailed();
-    }
-
-  }
-
-  //alerts the user of the unselected options
-  function selectionsFailed(){
-    alert("Please complete the missing highlighted fields");
-    //add in a highlighting for missing fields
-  }
-
-  //click listender for each button
-  if (submit.addEventListener) {
-    submit.addEventListener("click", function() {
-      checkSelections();
-      if(radioCompleted){
-        //sends to the confirm page
-        window.location = 'confirmPage.html';
-      }
-    }, false);
-  } else {
-    submit.attachEvent("onclick", function() {
-      //does nothing
-    });
-  }
-
-  if (edit.addEventListener) {
-    edit.addEventListener("click", function() {
-      //sends back to data input
-      window.location = 'DataInput.html';
-    }, false);
-  } else {
-    edit.attachEvent("onclick", function() {
-      //does nothing
-    });
-  }
-
-</script>
-
-
 </body>
+
+<script type = "text/javascript" src ="staffPage.js"></script>
 
 </html>
