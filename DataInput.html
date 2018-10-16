@@ -21,139 +21,99 @@
 
 <body>
 
-  <div id="wrapper">
-    <form>
+
+  <form action="StaffPage.html">
+    <div id="wrapper">
       <label for="pName">
         <span>Patient Name</span>
-        <input type="text" id="pName" />
+        <input type="text" name="pName" id="pName" required />
       </label>
       <label for="MR#">
         <span>MR #:</span>
-        <input type="text" id="MR#" />
+        <input type="text" name="MR#" id="MR#" required />
       </label>
       <label for="Date">
         <span>Date</span>
-        <input type="Date" id="Date" />
+        <input type="Date" name="Date" id="Date" required />
       </label>
       <label for="Time">
         <span>Time</span>
-        <input type="time" id="time" />
+        <input type="time" name="Time" id="time" required />
       </label>
       <label for="Location">
         <span>Location</span>
-        <input type="Location" id="Location" />
+        <input type="Location" name="Location" id="Location" required />
       </label>
-    </form>
-  </div>
+    </div>
 
-  <div class="padding-top">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Time</th>
-          <th scope="col">Rhythm</th>
-          <th scope="col">Medication</th>
-          <th scope="col">Dose</th>
-          <th scope="col">IV</th>
-          <th scope="col">Defib Joules</th>
-          <th scope="col">Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row"></th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row"></th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row"></th>
-          <td colspan="2"></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="padding-top">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Rhythm</th>
+            <th scope="col">Medication</th>
+            <th scope="col">Dose</th>
+            <th scope="col">IV</th>
+            <th scope="col">Defib Joules</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
 
-  <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
-    <div class="btn-group" role="group">
-      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Rythm
-      </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">V-Fib</a>
-        <a class="dropdown-item" href="#">A-Fib</a>
-        <a class="dropdown-item" href="#">A-Fib</a>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Rythm
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">V-Fib</a>
+          <a class="dropdown-item" href="#">A-Fib</a>
+          <a class="dropdown-item" href="#">A-Fib</a>
+        </div>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Medication
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
+          <a class="dropdown-item" href="#">2</a>
+          <a class="dropdown-item" href="#">3</a>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-secondary">IV</button>
+      <button type="button" class="btn btn-secondary">Airway</button>
+      <button type="button" class="btn btn-secondary">Intervention</button>
+    </div>
+
+    <div class="input-group input-group-lg padding-left">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Type Here</span>
+      </div>
+      <input type="text" class="form-control" id="text_box" aria-label="With textarea" onkeypress="return textBoxKeyPress(event)"></textarea>
+
+      <div>
+        <button type="button" class="btncls" onclick="sendData()">Button</button>
       </div>
     </div>
 
-    <div class="btn-group" role="group">
-      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Medication
-      </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">1</a>
-        <a class="dropdown-item" href="#">2</a>
-        <a class="dropdown-item" href="#">3</a>
-      </div>
+    <div class="padding-top padding-left" id="submit_btn">
+      <input type="submit" value=" Submit " />
     </div>
-
-    <button type="button" class="btn btn-secondary">IV</button>
-    <button type="button" class="btn btn-secondary">Airway</button>
-    <button type="button" class="btn btn-secondary">Intervention</button>
-  </div>
-
-
-  <div class="input-group input-group-lg padding-left">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Type Here</span>
-    </div>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-
-    <div>
-      <input type="submit" value=" OK " class="btncls" />
-    </div>
-  </div>
-
-  <div class="padding-top padding-left" id="submit_btn">
-    <input type="submit" value=" Submit " />
-  </div>
+  </form>
 
   <div class="footer">
     <p>Quinnipiac University Emergency Flow Sheet</p>
   </div>
 
-  <script>
-  //gets elements
-  var submit = document.getElementById("submit_btn");
-
-  //click listener for each button
-  if (submit.addEventListener) {
-    submit.addEventListener("click", function() {
-      //sends to the staff page
-      window.location = 'staffPage.html';
-    }, false);
-  } else {
-    submit.attachEvent("onclick", function() {
-      //does nothing
-    });
-  }
-  </script>
+  <script src="DataInput.js" type="text/javascript"></script>
 
 </body>
 
