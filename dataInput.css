@@ -17,3 +17,40 @@ input {
   border: 1px solid #000;
   padding: 5px;
 }
+
+#wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.padding-top {
+  padding-top: 25px;
+}
+
+.padding-left {
+  padding-left: 25px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+.input-group-lg {
+  height: 100px;
+  width: 98%;
+}
+
+.btncls {
+  margin-left: 25px;
+  float: right;
+  height: 100px;
+  width: 100px;
+}

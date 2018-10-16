@@ -17,79 +17,144 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <style>
+  <script>
 
+  //gets elements
+  var submit = document.getElementById("submit_btn");
 
+  //click listener for each button
+  if (submit.addEventListener) {
+    submit.addEventListener("click", function() {
+      //sends to the staff page
+      window.location = 'staffPage.html';
+    }, false);
+  } else {
+    submit.attachEvent("onclick", function() {
+      //does nothing
+    });
+  }
+  </script>
 
-  </style>
 </head>
 
 <body>
 
-  <form>
-    <label for="pName">
-      <span>Patient Name</span>
-      <input type="text" id="pName" />
-    </label>
-    <label for="MR#">
-      <span>MR #:</span>
-      <input type="text" id="MR#" />
-    </label>
-    <label for="Date">
-      <span>Date</span>
-      <input type="Date" id="Date" />
-    </label>
-    <label for="Time">
-      <span>Time</span>
-      <input type="time" id="time" />
-    </label>
-    <label for="Location">
-      <span>Location</span>
-      <input type="Location" id="Location" />
-    </label>
-  </form>
+  <div id="wrapper">
+    <form>
+      <label for="pName">
+        <span>Patient Name</span>
+        <input type="text" id="pName" />
+      </label>
+      <label for="MR#">
+        <span>MR #:</span>
+        <input type="text" id="MR#" />
+      </label>
+      <label for="Date">
+        <span>Date</span>
+        <input type="Date" id="Date" />
+      </label>
+      <label for="Time">
+        <span>Time</span>
+        <input type="time" id="time" />
+      </label>
+      <label for="Location">
+        <span>Location</span>
+        <input type="Location" id="Location" />
+      </label>
+    </form>
+  </div>
 
-  <table class="table table-sm">
-    <thead>
-      <tr>
-        <th scope="col">Time</th>
-        <th scope="col">Rhythm</th>
-        <th scope="col">Medication</th>
-        <th scope="col">Dose</th>
-        <th scope="col">IV</th>
-        <th scope="col">Defib Joules</th>
-        <th scope="col">Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row"></th>
-        <td colspan="2"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="padding-top">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Time</th>
+          <th scope="col">Rhythm</th>
+          <th scope="col">Medication</th>
+          <th scope="col">Dose</th>
+          <th scope="col">IV</th>
+          <th scope="col">Defib Joules</th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Rythm
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">V-Fib</a>
+        <a class="dropdown-item" href="#">A-Fib</a>
+        <a class="dropdown-item" href="#">A-Fib</a>
+      </div>
+    </div>
+
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Medication
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">1</a>
+        <a class="dropdown-item" href="#">2</a>
+        <a class="dropdown-item" href="#">3</a>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-secondary">IV</button>
+    <button type="button" class="btn btn-secondary">Airway</button>
+    <button type="button" class="btn btn-secondary">Intervention</button>
+  </div>
+
+
+  <div class="input-group input-group-lg padding-left">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Type Here</span>
+    </div>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+
+    <div>
+      <input type="submit" value=" OK " class="btncls" />
+    </div>
+  </div>
+
+  <div class="padding-top padding-left" id="submit_btn">
+    <input type="submit" value=" Submit " />
+  </div>
+
+  <div class="footer">
+    <p>Quinnipiac University Emergency Flow Sheet</p>
+  </div>
 
 </body>
 
