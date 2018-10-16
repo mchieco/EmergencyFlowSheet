@@ -43,7 +43,7 @@
         <th scope="row"></th>
         <td></td>
         <td></td>
-        <td></td>    
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -70,15 +70,15 @@
 
   <form>
     Reason Resuscitation Ended:<br>
-    <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
-    <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
-    <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
-    <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
-    <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
+    <input type="radio" id="reason" name = "reason" value="circualtion_returned"> Return of Circulation<br>
+    <input type="radio" id="reason" name = "reason" value="family_restrictions"> Restrictions by Family<br>
+    <input type="radio" id="reason" name = "reason"value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
+    <input type="radio" id="reason" name = "reason" value="medical_futility"> Medical Futility <br>
+    <input type="radio" id="reason" name = "reason" value="advance_directive"> Advance Directive <br>
     <br>
-    <input type="radio" name="family_notified" value="family_notified"> Family Notified <br>
-    <input type="radio" name="family_notified_event" value="family_notified_event"> of Event <br>
-    <input type="radio" name="family_notified_outcome" value="family_notified_outcome"> of Outcome <br>
+    <input type="radio" id="family_notified" value="family_notified"> Family Notified <br>
+    <input type="radio" id="family_notified_event" value="family_notified_event"> of Event <br>
+    <input type="radio" id="family_notified_outcome" value="family_notified_outcome"> of Outcome <br>
     Time: <br>
     <input type="time" name="time"><br>
     <br>
@@ -89,15 +89,41 @@
 
   <script type = "text/javascript">
 
+  var radioCompleted = false;
+
   //gets elements
+  var reason_btn = document.getElementById("reason");
+  var notified_btn = document.getElementById("family_notified");
+  var notified_event = document.getElementById("family_notified_event");
+  var notified_outcome = document.getElementById("family_notified_outcome");
+
   var submit = document.getElementById("submit_btn");
   var edit = document.getElementById("edit_btn");
+
+  //checks if the radio button is selected
+  function checkSelections(){
+    if (reason_btn.checked && notified_btn.checked && notified_event.checked && notified_outcome.checked) {
+      radioCompleted = true;
+    } else {
+      selectionsFailed();
+    }
+
+  }
+
+  //alerts the user of the unselected options
+  function selectionsFailed(){
+    alert("Please complete the missing highlighted fields");
+    //add in a highlighting for missing fields
+  }
 
   //click listender for each button
   if (submit.addEventListener) {
     submit.addEventListener("click", function() {
-      //sends to the confirm page
-      window.location = 'confirmPage.html';
+      checkSelections();
+      if(radioCompleted){
+        //sends to the confirm page
+        window.location = 'confirmPage.html';
+      }
     }, false);
   } else {
     submit.attachEvent("onclick", function() {
