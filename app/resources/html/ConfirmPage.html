@@ -7,9 +7,9 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
     <title>Confirm Page</title>
     <meta name="description" content="confirmPage">
@@ -17,11 +17,11 @@
 
     <link rel="stylesheet" href="/css/confirmPage.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
     <script src="../static/js/ConfirmPage.js" type="text/javascript"></script>
 </head>
@@ -32,18 +32,20 @@
             <form>
                 Date:
                 <script>
-                    document.write(sessionStorage.getItem('date'));
+                document.write(sessionStorage.getItem('date'));
                 </script>
             </form>
             <form>
                 Time:
                 <script>
-                    document.write(sessionStorage.getItem("time"));
+                document.write(sessionStorage.getItem("time"));
                 </script>
             </form>
             <form>
                 Location:
-                <input type="text" name="Location" required>
+                <script>
+                document.write(sessionStorage.getItem("location"));
+                </script>
             </form>
         </div>
         <div class='boxed'>
@@ -73,131 +75,135 @@
         <div class="boxed">
             <form>
                 Patient Name:
-                <input type="text" name="PatientName" required>
+                <script>
+                document.write(sessionStorage.getItem("patientName"))
+                </script>
             </form>
             <form>
                 MR#
-                <input type="text" name="MR#" required>
+                <script>
+                document.write(sessionStorage.getItem("MR"));
+                </script>
             </form>
         </div>
 
     </div>
     Comments:
     <textarea rows="3" name="comments" class="mytext"></textarea>
-    </form>
-    </div>
-    <div class="padding-top">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Time</th>
-                    <th scope="col">Rhythm</th>
-                    <th scope="col">Medication</th>
-                    <th scope="col">Dose</th>
-                    <th scope="col">IV</th>
-                    <th scope="col">Defib Joules</th>
-                    <th scope="col">Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row"></th>
-                    <td colspan="2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <form>
-        Reason Resuscitation Ended:<br>
-        <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
-        <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
-        <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
-        <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
-        <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
-        <br>
-        <input type="checkbox" id="family_notified" value="family_notified" required> Family Notified <br>
-        <input type="checkbox" id="family_notified_event" value="family_notified_event" required> of Event <br>
-        <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome <br>
-        Time: <br>
-        <input type="time" name="time" required><br>
-        <br>
-    </form>
-    <div class="submit_btn">
-        <input type="submit" value=" Submit " />
-    </div>
-    <div class="footer">
-        <p>Quinnipiac University Emergency Flow Sheet</p>
-    </div>
+</form>
+</div>
+<div class="padding-top">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Rhythm</th>
+                <th scope="col">Medication</th>
+                <th scope="col">Dose</th>
+                <th scope="col">IV</th>
+                <th scope="col">Defib Joules</th>
+                <th scope="col">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<form>
+    Reason Resuscitation Ended:<br>
+    <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
+    <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
+    <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
+    <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
+    <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
+    <br>
+    <input type="checkbox" id="family_notified" value="family_notified" required> Family Notified <br>
+    <input type="checkbox" id="family_notified_event" value="family_notified_event" required> of Event <br>
+    <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome <br>
+    Time: <br>
+    <input type="time" name="time" required><br>
+    <br>
+</form>
+<div class="submit_btn">
+    <input type="submit" value=" Submit " />
+</div>
+<div class="footer">
+    <p>Quinnipiac University Emergency Flow Sheet</p>
+</div>
 
 
 </body>
