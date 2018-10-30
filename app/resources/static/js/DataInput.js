@@ -9,7 +9,7 @@ function textBoxKeyPress(e) {
   //move info to table
   var textBox = document.getElementById('text_box');
   var table = document.getElementById("datatable");
-  var i = 0;
+  var i = 1;
   // add a new row
   var row = table.insertRow(i);
   // add a cell to row
@@ -20,6 +20,8 @@ function textBoxKeyPress(e) {
   var cell5 = row.insertCell(4);
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
+  // add info to cells
+  cell1.innerHTML = getCurrTime();
   i++;
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
