@@ -17,3 +17,15 @@ function textBoxKeyPress(e) {
   //keeps from submitting form
   return false;
 }
+
+var currentdate = new Date();
+var currDate = (currentdate.getMonth()+1) + "/"+ currentdate.getDate()  + "/" + currentdate.getFullYear();
+var currTime = currentdate.getHours() + ":"+ currentdate.getMinutes();
+
+function getCurrDate(){
+  return currDate;
+}
+
+function getCurrTime(){
+  return currTime;
+}
