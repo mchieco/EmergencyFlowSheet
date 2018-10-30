@@ -8,6 +8,19 @@ function textBoxKeyPress(e) {
 
   //move info to table
   var textBox = document.getElementById('text_box');
+  var table = document.getElementById("datatable");
+  var i = 0;
+  // add a new row
+  var row = table.insertRow(i);
+  // add a cell to row
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  i++;
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
   textBox.value = "";
