@@ -35,11 +35,19 @@
       </label>
       <label for="Date">
         <span>Date</span>
-        <script> document.write(getCurrDate()); </script>
+        <script>
+        var date = getCurrDate();
+        document.write(date);
+        sessionStorage.setItem('date', date);
+        </script>
       </label>
       <label for="Time">
         <span>Time</span>
-        <script> document.write(getCurrTime()); </script>
+        <script>
+        var time = getCurrTime();
+        document.write(time);
+        sessionStorage.setItem('time', time);
+        </script>
       </label>
       <label for="Location">
         <span>Location</span>
