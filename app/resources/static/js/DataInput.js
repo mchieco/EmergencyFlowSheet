@@ -33,7 +33,13 @@ function textBoxKeyPress(e) {
 
 var currentdate = new Date();
 var currDate = (currentdate.getMonth()+1) + "/"+ currentdate.getDate()  + "/" + currentdate.getFullYear();
-var currTime = currentdate.getHours() + ":"+ currentdate.getMinutes();
+var currTime;
+if(currentdate.getMinutes() < 10){
+  currTime = currentdate.getHours() + ":0"+ currentdate.getMinutes();
+} else {
+  currTime = currentdate.getHours() + ":"+ currentdate.getMinutes();
+}
+
 
 function getCurrDate(){
   return currDate;
@@ -41,4 +47,10 @@ function getCurrDate(){
 
 function getCurrTime(){
   return currTime;
+}
+
+function onSubmit(){
+  sessionStorage.setItem("patientName", document.getElementById("pName").value);
+  sessionStorage.setItem("MR", document.getElementById("MR#").value);
+  sessionStorage.setItem("location", document.getElementById("Location").value);
 }
