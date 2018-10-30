@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-api-template",
+  "version": "1.0.0",
+  "description": "Basic NodeJS server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoePassanante/NodeJS-API-Template.git"
+  },
+  "author": "Joe Passanante",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoePassanante/NodeJS-API-Template/issues"
+  },
+  "homepage": "https://github.com/JoePassanante/NodeJS-API-Template#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.4"
+  }
+}
