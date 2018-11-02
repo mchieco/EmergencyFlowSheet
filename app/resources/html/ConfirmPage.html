@@ -44,7 +44,7 @@
             <form>
                 Location:
                 <script>
-                document.write(sessionStorage.getItem("location"));
+                document.write(getParams().Location);
                 </script>
             </form>
         </div>
@@ -76,13 +76,13 @@
             <form>
                 Patient Name:
                 <script>
-                document.write(sessionStorage.getItem("patientName"))
+                document.write(getParams().pName);
                 </script>
             </form>
             <form>
                 MR#
                 <script>
-                document.write(sessionStorage.getItem("MR"));
+                document.write(getParams().MR);
                 </script>
             </form>
         </div>
