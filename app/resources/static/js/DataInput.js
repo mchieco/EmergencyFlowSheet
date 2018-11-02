@@ -1,13 +1,15 @@
-function sendData() {
-  console.log("test");
+function enterKeyPress(e){
+  e = e || window.event;
+  if(e.keyCode == 13) {
+    console.log("HI");
+    textBoxKeyPress();
+  }
 }
 
-function textBoxKeyPress(e) {
-  e = e || window.event;
-  if (e.keyCode != 13) return;
+function textBoxKeyPress() {
 
   //move info to table
-  var textBox = document.getElementById('text_box');
+  var textBox = document.getElementById('input_box');
   var table = document.getElementById("datatable");
   var i = 1;
   // add a new row
@@ -26,12 +28,23 @@ function textBoxKeyPress(e) {
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
   textBox.value = "";
-  console.log(text);
-  sendData();
+
+  cell7.innerHTML = text;
+  
+  sendData(text);
 
   //keeps from submitting form
   return false;
 }
+
+function setNotes(text){
+
+}
+
+function sendData(text) {
+  console.log(text);
+}
+
 
 var currentdate = new Date();
 var currDate = (currentdate.getMonth()+1) + "/"+ currentdate.getDate()  + "/" + currentdate.getFullYear();

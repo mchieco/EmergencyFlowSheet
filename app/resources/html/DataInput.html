@@ -22,16 +22,15 @@
 
 <body>
 
-
-  <form action="ConfirmPage.html" onsubmit=onSubmit()>
+  <form action="ConfirmPage.html" onsubmit=onSubmit() method = "get">
     <div id="wrapper">
       <label for="pName">
         <span>Patient Name</span>
         <input type="text" name="pName" id="pName" required />
       </label>
-      <label for="MR#">
+      <label for="MR">
         <span>MR #:</span>
-        <input type="text" name="MR#" id="MR#" required />
+        <input type="text" name="MR" id="MR" required />
       </label>
       <label for="Date">
         <span>Date</span>
@@ -85,15 +84,15 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Type Here</span>
       </div>
-      <input type="text" class="form-control" id="text_box" aria-label="With textarea" onkeypress="return textBoxKeyPress(event)"></textarea>
+      <input type="text" class="form-control" id="input_box" aria-label="With textarea" onkeydown=""></textarea>
 
       <div>
         <button type="button" class="btncls" onclick="textBoxKeyPress()">Add</button>
       </div>
     </div>
 
-    <div class="padding-top padding-left" id="submit_btn">
-      <input type="submit" value="Submit" />
+    <div class="padding-top padding-left" >
+      <input type="submit" id="submit_btn" value="Submit" />
     </div>
 
     <div class="padding-top">
