@@ -22,14 +22,14 @@
 
 <body>
 
-  <form action="ConfirmPage.html" onsubmit=onSubmit() method = "get">
+  <form action="ConfirmPage.html" onsubmit=onSubmit() method="get">
     <div id="wrapper">
       <label for="pName">
         <span>Patient Name</span>
         <input type="text" name="pName" id="pName" required />
       </label>
       <label for="MR">
-        <span>MR #:</span>
+        <span>MR #</span>
         <input type="text" name="MR" id="MR" required />
       </label>
       <label for="Date">
@@ -54,6 +54,7 @@
       </label>
     </div>
 
+    <!-- Button Group -->
     <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
       <div class="btn-group" role="group">
         <button id="rythmbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,27 +75,52 @@
           <a class="dropdown-item" id="amiodaronebutton" href="#">Amiodarone</a>
         </div>
       </div>
-      <button id="ivbutton" type="button" class="btn btn-secondary">IV</button>
-      <button id="shockbutton" type="button" class="btn btn-secondary">Shock</button>
+
+      <div class="btn-group" role="group">
+        <button id="ivbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          IV
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" id="bolus" href="#">Bolus</a>
+          <a class="dropdown-item" id="epinephrine" href="#">Epinephrine</a>
+          <a class="dropdown-item" id="dopamine" href="#">Dopamine</a>
+          <a class="dropdown-item" id="norepinephrinebutton" href="#">Norepinephrine</a>
+        </div>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button id="shockbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Shock
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" id="biphasicbutton" href="#">Biphasic (120-200J)</a>
+          <a class="dropdown-item" id="monophasicbutton" href="#">Monophasic (360J)</a>
+        </div>
+      </div>
+
       <button id="airwaybutton" type="button" class="btn btn-secondary">Airway</button>
       <button id="interventionbutton" type="button" class="btn btn-secondary">Intervention</button>
     </div>
 
+    <!--Input Text Area -->
     <div class="input-group input-group-lg padding-left">
       <div class="input-group-prepend">
         <span class="input-group-text">Type Here</span>
       </div>
       <input type="text" class="form-control" id="input_box" aria-label="With textarea" onkeydown=""></textarea>
 
+      <!--Add Button -->
       <div>
         <button type="button" class="btncls" onclick="textBoxKeyPress()">Add</button>
       </div>
     </div>
 
-    <div class="padding-top padding-left" >
+    <!--Submit Button -->
+    <div class="padding-top padding-left">
       <input type="submit" id="submit_btn" value="Submit" />
     </div>
 
+    <!--Table-->
     <div class="padding-top">
       <table id="datatable" class="table table-bordered">
         <thead>

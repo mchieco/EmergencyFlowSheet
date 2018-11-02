@@ -1,6 +1,6 @@
-function enterKeyPress(e){
+function enterKeyPress(e) {
   e = e || window.event;
-  if(e.keyCode == 13) {
+  if (e.keyCode == 13) {
     console.log("HI");
     textBoxKeyPress();
   }
@@ -30,14 +30,14 @@ function textBoxKeyPress() {
   textBox.value = "";
 
   cell7.innerHTML = text;
-  
+
   sendData(text);
 
   //keeps from submitting form
   return false;
 }
 
-function setNotes(text){
+function setNotes(text) {
 
 }
 
@@ -47,24 +47,24 @@ function sendData(text) {
 
 
 var currentdate = new Date();
-var currDate = (currentdate.getMonth()+1) + "/"+ currentdate.getDate()  + "/" + currentdate.getFullYear();
+var currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
 var currTime;
-if(currentdate.getMinutes() < 10){
-  currTime = currentdate.getHours() + ":0"+ currentdate.getMinutes();
+if (currentdate.getMinutes() < 10) {
+  currTime = currentdate.getHours() + ":0" + currentdate.getMinutes();
 } else {
-  currTime = currentdate.getHours() + ":"+ currentdate.getMinutes();
+  currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
 }
 
 
-function getCurrDate(){
+function getCurrDate() {
   return currDate;
 }
 
-function getCurrTime(){
+function getCurrTime() {
   return currTime;
 }
 
-function onSubmit(){
+function onSubmit() {
   sessionStorage.setItem("patientName", document.getElementById("pName").value);
   sessionStorage.setItem("MR", document.getElementById("MR#").value);
   sessionStorage.setItem("location", document.getElementById("Location").value);
