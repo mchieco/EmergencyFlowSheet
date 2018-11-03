@@ -56,50 +56,61 @@
 
     <!-- Button Group -->
     <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
-      <div class="btn-group" role="group">
-        <button id="rythmbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Rythm
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" id="vfibbutton" href="#">V-Fib/pVT</a>
-          <a class="dropdown-item" id="asystolebutton" href="#">Asystole/PEA</a>
-        </div>
+
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="rythmSelectGroup">Rythm</label>
+        <select class="custom-select mr-sm-2" id="rythmSelectGroup">
+          <option selected>Choose...</option>
+          <option value="1">V-Fib</option>
+          <option value="2">pVT</option>
+          <option value="3">Asystole</option>
+          <option value="4">PEA</option>
+          <option value="5">None</option>
+        </select>
       </div>
 
-      <div class="btn-group" role="group">
-        <button id="medicationbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Medication
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" id="epinephirinebutton" href="#">Epinephrine</a>
-          <a class="dropdown-item" id="amiodaronebutton" href="#">Amiodarone</a>
-        </div>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="rythmSelectGroup">Medication</label>
+        <select class="custom-select mr-sm-2" id="rythmSelectGroup">
+          <option selected>Choose...</option>
+          <option value="1">Epinephrine</option>
+          <option value="2">Amiodarone</option>
+          <option value="3">None</option>
+        </select>
       </div>
 
-      <div class="btn-group" role="group">
-        <button id="ivbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          IV
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" id="bolus" href="#">Bolus</a>
-          <a class="dropdown-item" id="epinephrine" href="#">Epinephrine</a>
-          <a class="dropdown-item" id="dopamine" href="#">Dopamine</a>
-          <a class="dropdown-item" id="norepinephrinebutton" href="#">Norepinephrine</a>
-        </div>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="rythmSelectGroup">Dose</label>
+        <select class="custom-select mr-sm-2" id="rythmSelectGroup">
+          <option selected>Choose...</option>
+          <option value="1">1 mg</option>
+          <option value="2">150 mg</option>
+          <option value="3">300 mg</option>
+          <option value="4">none</option>
+        </select>
       </div>
 
-      <div class="btn-group" role="group">
-        <button id="shockbutton" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Shock
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" id="biphasicbutton" href="#">Biphasic (120-200J)</a>
-          <a class="dropdown-item" id="monophasicbutton" href="#">Monophasic (360J)</a>
-        </div>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="rythmSelectGroup">IV</label>
+        <select class="custom-select mr-sm-2" id="rythmSelectGroup">
+          <option selected>Choose...</option>
+          <option value="1">Bolus</option>
+          <option value="2">Epinephrine</option>
+          <option value="3">Dopamine</option>
+          <option value="4">Norepinephrine</option>
+          <option value="5">None</option>
+        </select>
       </div>
 
-      <button id="airwaybutton" type="button" class="btn btn-secondary">Airway</button>
-      <button id="interventionbutton" type="button" class="btn btn-secondary">Intervention</button>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="rythmSelectGroup">Shock</label>
+        <select class="custom-select mr-sm-2" id="rythmSelectGroup">
+          <option selected>Choose...</option>
+          <option value="1">Biphasic (120-200 J)</option>
+          <option value="2">Monophasic (360 J)</option>
+          <option value="3">None</option>
+        </select>
+      </div>
     </div>
 
     <!--Input Text Area -->
