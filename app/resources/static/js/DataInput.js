@@ -3,9 +3,20 @@ function enterKeyPress(e) {
   if (e.keyCode == 13) {
     console.log("HI");
     textBoxKeyPress();
+    //keeps from submitting form
+    return false;
   }
-  //keeps from submitting form
-  return false;
+}
+
+function validateButton(type) {
+  if (type.selectedIndex == 0) {
+    alert('select one answer');
+    return false;
+  } else {
+    var selectedText = type.options[type.selectedIndex].text;
+    console.log(selectedText);
+    return true;
+  }
 }
 
 function textBoxKeyPress() {
@@ -24,14 +35,53 @@ function textBoxKeyPress() {
   var cell5 = row.insertCell(4);
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
+
   // add info to cells
+  // add time
   cell1.innerHTML = getCurrTime();
-  i++;
+
+  // input into rythm
+  var rythm = document.getElementById("rythmType");
+  if(validateButton(rythm) == false){
+    return false;
+  }
+  cell2.innerHTML = rythm.options[rythm.selectedIndex].text;
+
+  // input into meds
+  var meds = document.getElementById("medicationType");
+  if(validateButton(meds) == false){
+    return false;
+  }
+  cell3.innerHTML = meds.options[meds.selectedIndex].text;
+
+  // input into dose
+  var dose = document.getElementById("doseType");
+  if (validateButton(dose) == false) {
+    return false;
+  }
+  cell4.innerHTML = dose.options[dose.selectedIndex].text;
+
+  // input into iv
+  var iv = document.getElementById("ivType");
+  if (validateButton(iv) == false) {
+    return false;
+  }
+  cell5.innerHTML = iv.options[iv.selectedIndex].text;
+
+  // input into defib joules
+  var shock = document.getElementById("shockType");
+  if (validateButton(shock) == false) {
+    return false;
+  }
+  cell6.innerHTML = shock.options[shock.selectedIndex].text;
+
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
   textBox.value = "";
-
   cell7.innerHTML = text;
+  
+  i++;
+
 
   sendData(text);
 
