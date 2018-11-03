@@ -4,6 +4,8 @@ function enterKeyPress(e) {
     console.log("HI");
     textBoxKeyPress();
   }
+  //keeps from submitting form
+  return false;
 }
 
 function textBoxKeyPress() {
@@ -33,8 +35,6 @@ function textBoxKeyPress() {
 
   sendData(text);
 
-  //keeps from submitting form
-  return false;
 }
 
 function setNotes(text) {
