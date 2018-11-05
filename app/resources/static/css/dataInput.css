@@ -54,3 +54,7 @@ input {
   height: 100px;
   width: 100px;
 }
+
+.dropwidth{
+  width: 250px;
+}
