@@ -32,18 +32,21 @@
         <div class="boxed">
             <form>
                 Date:
+                <br/>
                 <script>
                 document.write(sessionStorage.getItem('date'));
                 </script>
             </form>
             <form>
                 Time:
+                <br/>
                 <script>
                 document.write(sessionStorage.getItem("time"));
                 </script>
             </form>
             <form>
                 Location:
+                <br/>
                 <script>
                 document.write(getParams().Location.replace("+", " "));
                 </script>
@@ -76,13 +79,15 @@
         <div class="boxed">
             <form>
                 Patient Name:
+                <br/>
                 <script>
                 name = getParams().pName.replace("+", " ");
                 document.write(name);
                 </script>
             </form>
             <form>
-                MR#
+                MR#:
+                <br/>
                 <script>
                 document.write(getParams().MR);
                 </script>
