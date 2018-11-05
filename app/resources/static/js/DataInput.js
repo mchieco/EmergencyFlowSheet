@@ -28,7 +28,8 @@ function validateButton(type) {
 }
 
 function textBoxKeyPress() {
-
+  updateDate();
+  updateTime();
   //move info to table
   var textBox = document.getElementById('input_box');
   var table = document.getElementById("datatable");
@@ -129,7 +130,19 @@ if (currentdate.getMinutes() < 10) {
   currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
 }
 
+function updateTime(){
+  currentdate = new Date();
+  if (currentdate.getMinutes() < 10) {
+    currTime = currentdate.getHours() + ":0" + currentdate.getMinutes();
+  } else {
+    currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
+  }
+}
 
+function updateDate(){
+  currentdate = new Date();
+  currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
+}
 function getCurrDate() {
   return currDate;
 }

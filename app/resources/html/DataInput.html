@@ -6,26 +6,23 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <title>Data Input</title>
   <meta name="data input">
 
-  <link rel="stylesheet" href="../static/css/dataInput.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/dataInput.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script src="../static/js/DataInput.js" type="text/javascript"></script>
 </head>
 
 <body>
 
-  <form action="ConfirmPage.html" onsubmit=onSubmit() method="GET" id="my_form">
+  <form action="ConfirmPage.html" method="GET" id="my_form">
     <div id="wrapper">
       <label for="pName">
         <span>Patient Name</span>
@@ -60,53 +57,58 @@
     <!-- Button Group -->
     <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
 
-      <div class="col-auto my-1 dropwidth">
+      <div class="col-auto my-1">
         <label class="mr-sm-2" for="rythmSelectGroup">Rythm</label>
         <select class="custom-select mr-sm-2" id="rythmType">
-          <option selected>None</option>
+          <option selected>Choose...</option>
           <option value="1">V-Fib</option>
           <option value="2">pVT</option>
           <option value="3">Asystole</option>
           <option value="4">PEA</option>
+          <option value="5">None</option>
         </select>
       </div>
 
-      <div class="col-auto my-1 dropwidth">
+      <div class="col-auto my-1">
         <label class="mr-sm-2" for="rythmSelectGroup">Medication</label>
         <select class="custom-select mr-sm-2" id="medicationType">
-          <option selected>None</option>
+          <option selected>Choose...</option>
           <option value="1">Epinephrine</option>
           <option value="2">Amiodarone</option>
+          <option value="3">None</option>
         </select>
       </div>
 
-      <div class="col-auto my-1 dropwidth">
+      <div class="col-auto my-1">
         <label class="mr-sm-2" for="rythmSelectGroup">Dose</label>
         <select class="custom-select mr-sm-2" id="doseType">
-          <option selected>None</option>
+          <option selected>Choose...</option>
           <option value="1">1 mg</option>
           <option value="2">150 mg</option>
           <option value="3">300 mg</option>
+          <option value="4">none</option>
         </select>
       </div>
 
-      <div class="col-auto my-1 dropwidth">
+      <div class="col-auto my-1">
         <label class="mr-sm-2" for="rythmSelectGroup">IV</label>
         <select class="custom-select mr-sm-2" id="ivType">
-          <option selected>None</option>
+          <option selected>Choose...</option>
           <option value="1">Bolus</option>
           <option value="2">Epinephrine</option>
           <option value="3">Dopamine</option>
           <option value="4">Norepinephrine</option>
+          <option value="5">None</option>
         </select>
       </div>
 
-      <div class="col-auto my-1 dropwidth">
+      <div class="col-auto my-1">
         <label class="mr-sm-2" for="rythmSelectGroup">Shock</label>
         <select class="custom-select mr-sm-2" id="shockType">
-          <option selected>None</option>
+          <option selected>Choose...</option>
           <option value="1">Biphasic (120-200 J)</option>
           <option value="2">Monophasic (360 J)</option>
+          <option value="3">None</option>
         </select>
       </div>
     </div>
@@ -122,6 +124,11 @@
       <div>
         <button type="button" class="btncls" onclick="textBoxKeyPress()">Add</button>
       </div>
+    </div>
+
+    <!--Submit Button -->
+    <div class="padding-top padding-left">
+      <input type="submit" id="submit_btn" value="Submit"/>
     </div>
 
     <!--Table-->
@@ -143,10 +150,6 @@
       </table>
     </div>
 
-    <!--Submit Button -->
-    <div class="padding-top padding-left">
-      <input type="submit" id="submit_btn" value="Submit" />
-    </div>
 
   </form>
 
