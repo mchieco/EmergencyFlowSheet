@@ -16,68 +16,68 @@ console.log(col6Data);
 
 var i = 1;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   addRows(rowCount);
 }, false);
 
-function getParams(){
+function getParams() {
   var params = {};
   var param_array = window.location.href.split('?')[1].split('&');
-  for(var i in param_array){
+  for (var i in param_array) {
     x = param_array[i].split('=');
     params[x[0]] = x[1];
   }
   return params;
 };
 
-function addText(conts, key){
+function addText(conts, key) {
   var loc1 = 0;
   var loc2 = conts.indexOf("--");
-  if(loc2 == -1){
+  if (loc2 == -1) {
     var text = conts;
   } else {
-    if(key == "one") {
+    if (key == "one") {
       var text = col1Data.substring(loc1, loc2);
 
-    } else if(key == "two") {
+    } else if (key == "two") {
       var text = col2Data.substring(loc1, loc2);
 
-    } else if(key == "three") {
+    } else if (key == "three") {
       var text = col3Data.substring(loc1, loc2);
 
-    } else if(key == "four") {
+    } else if (key == "four") {
       var text = col4Data.substring(loc1, loc2);
 
-    } else if(key == "five") {
+    } else if (key == "five") {
       var text = col5Data.substring(loc1, loc2);
 
-    } else if(key == "six") {
+    } else if (key == "six") {
       var text = col6Data.substring(loc1, loc2);
 
-    } else if(key == "seven") {
+    } else if (key == "seven") {
       var text = notesConts.substring(loc1, loc2);
     }
   }
-  if(key == "one") {
-    col1Data = col1Data.substring(loc2+2, col1Data.length);
+  if (key == "one") {
+    col1Data = col1Data.substring(loc2 + 2, col1Data.length);
 
-  } else if(key == "two") {
-    col2Data = col2Data.substring(loc2+2, col2Data.length);
+  } else if (key == "two") {
+    col2Data = col2Data.substring(loc2 + 2, col2Data.length);
 
-  } else if(key == "three") {
-    col3Data = col3Data.substring(loc2+2, col3Data.length);
+  } else if (key == "three") {
+    col3Data = col3Data.substring(loc2 + 2, col3Data.length);
 
-  } else if(key == "four") {
-    col4Data = col4Data.substring(loc2+2, col4Data.length);
+  } else if (key == "four") {
+    col4Data = col4Data.substring(loc2 + 2, col4Data.length);
 
-  } else if(key == "five") {
-    col5Data = col5Data.substring(loc2+2, col5Data.length);
+  } else if (key == "five") {
+    col5Data = col5Data.substring(loc2 + 2, col5Data.length);
 
-  } else if(key == "six") {
-    col6Data = col6Data.substring(loc2+2, col6Data.length);
+  } else if (key == "six") {
+    col6Data = col6Data.substring(loc2 + 2, col6Data.length);
 
-  } else if(key == "seven") {
-    notesConts = notesConts.substring(loc2+2, notesConts.length);
+  } else if (key == "seven") {
+    notesConts = notesConts.substring(loc2 + 2, notesConts.length);
   }
   return text;
 }
@@ -118,7 +118,7 @@ function addRows(amount) {
   cell5.innerHTML = fiveText;
   cell6.innerHTML = sixText;
 
-  if(amount > 0) {
+  if (amount > 0) {
     addRows(amount);
   }
   //keeps from submitting form
