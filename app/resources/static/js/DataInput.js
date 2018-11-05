@@ -19,8 +19,8 @@ function enterKeyPress(e) {
 
 function validateButton(type) {
   if (type.selectedIndex == 0) {
-    var selectedText = type.options[type.selectedIndex].text;
-    return true;
+    alert('select one answer');
+    return false;
   } else {
     var selectedText = type.options[type.selectedIndex].text;
     return true;
@@ -72,7 +72,7 @@ function textBoxKeyPress() {
     return false;
   }
   cell4.innerHTML = dose.options[dose.selectedIndex].text;
-  col4Cont = col3Cont + setNotes(col4Cont, dose.options[dose.selectedIndex].text);
+  col4Cont = col4Cont + setNotes(col4Cont, dose.options[dose.selectedIndex].text);
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
@@ -91,7 +91,7 @@ function textBoxKeyPress() {
   }
   cell6.innerHTML = shock.options[shock.selectedIndex].text;
   col6Cont = col6Cont + setNotes(col6Cont, shock.options[shock.selectedIndex].text);
-  sessionStorage.setItem('col6Cont', col4Cont);
+  sessionStorage.setItem('col6Cont', col6Cont);
 
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
