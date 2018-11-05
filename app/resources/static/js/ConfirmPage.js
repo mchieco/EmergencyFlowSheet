@@ -100,18 +100,6 @@ function addRows(amount) {
   i++;
   amount--;
   //removes text and saves it to var
-  // var loc1 = 0;
-  // var loc2 = notesConts.indexOf("--");
-  // if(loc2 == -1){
-  //   var text = notesConts;
-  // } else {
-  //   var text = notesConts.substring(loc1, loc2);
-  // }
-  // console.log("pre " + notesConts);
-  // notesConts = notesConts.substring(loc2+2, notesConts.length);
-  // console.log("post " + notesConts);
-  // console.log("str " + text);
-
   var oneText = addText(col1Data, "one");
   var twoText = addText(col2Data, "two");
   var threeText = addText(col3Data, "three");
