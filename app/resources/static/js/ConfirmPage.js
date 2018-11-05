@@ -3,7 +3,10 @@ var rowCount = sessionStorage.getItem("tableRows");
 var i = 1;
 
 console.log(rowCount);
-addRows(rowCount);
+
+document.addEventListener('DOMContentLoaded', function() {
+  addRows(rowCount);
+}, false);
 
 function getParams(){
   var params = {};
@@ -16,13 +19,16 @@ function getParams(){
 };
 
 function getText(){
-
+  var n = tableConts.indexOf("-");
+  var str = tableConts.substring(0,n+1);
+  console.log(str);
+  return str;
 };
 
 function addRows(amount) {
 
   //move info to table
-  var completeTable = document.getElementById("completeTable");
+  var completeTable = document.getElementById('data');
   // add a new row
   var row = completeTable.insertRow(i);
   // add a cell to row
