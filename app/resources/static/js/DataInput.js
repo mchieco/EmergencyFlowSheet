@@ -82,8 +82,11 @@ function textBoxKeyPress() {
 
   cell7.innerHTML = text;
 
-
-  strTable = strTable + "-" + text;
+  if(strTable != ""){
+    strTable = strTable + "-" + text;
+  } else{
+    strTable = text;
+  }
   console.log(strTable);
 
   tableRows++;

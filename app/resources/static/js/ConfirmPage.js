@@ -2,6 +2,7 @@ var tableConts = sessionStorage.getItem("strTable");
 var rowCount = sessionStorage.getItem("tableRows");
 var i = 1;
 
+
 console.log(rowCount);
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,9 +20,17 @@ function getParams(){
 };
 
 function getText(){
-  var n = tableConts.indexOf("-");
-  var str = tableConts.substring(0,n+1);
-  console.log(str);
+  var loc1 = 0;
+  var loc2 = tableConts.indexOf("-");
+  if(loc2 == -1){
+    var str = tableConts;
+  } else {
+    var str = tableConts.substring(loc1, loc2);
+  }
+  console.log("pre " + tableConts);
+  tableConts = tableConts.substring(loc2+1, tableConts.length);
+  console.log("post " + tableConts);
+  console.log("str " + str);
   return str;
 };
 
