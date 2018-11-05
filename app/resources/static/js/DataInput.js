@@ -17,10 +17,12 @@ function enterKeyPress(e) {
   }
 }
 
+// check index of drop down button and saves text 
 function validateButton(type) {
   if (type.selectedIndex == 0) {
-    alert('select one answer');
-    return false;
+    var selectedText = type.options[type.selectedIndex].text;
+    return true;
+
   } else {
     var selectedText = type.options[type.selectedIndex].text;
     return true;
