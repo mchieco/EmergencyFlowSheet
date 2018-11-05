@@ -1,7 +1,20 @@
 var notesConts = sessionStorage.getItem("strTable");
 var rowCount = sessionStorage.getItem("tableRows");
 var col1Data = sessionStorage.getItem("col1Cont");
-console.log(col1Data);
+var col2Data = sessionStorage.getItem("col2Cont");
+var col3Data = sessionStorage.getItem("col3Cont");
+var col4Data = sessionStorage.getItem("col4Cont");
+var col5Data = sessionStorage.getItem("col5Cont");
+var col6Data = sessionStorage.getItem("col6Cont");
+
+
+console.log(col2Data);
+console.log(col3Data);
+console.log(col4Data);
+console.log(col5Data);
+console.log(col6Data);
+
+
 var i = 1;
 var conts = "";
 

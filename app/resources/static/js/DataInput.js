@@ -17,12 +17,10 @@ function enterKeyPress(e) {
   }
 }
 
-// check index of drop down button and saves text 
 function validateButton(type) {
   if (type.selectedIndex == 0) {
-    var selectedText = type.options[type.selectedIndex].text;
-    return true;
-
+    alert('select one answer');
+    return false;
   } else {
     var selectedText = type.options[type.selectedIndex].text;
     return true;
@@ -48,7 +46,6 @@ function textBoxKeyPress() {
   // add info to cells
   cell1.innerHTML = getCurrTime();
   col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
-  console.log(col1Cont);
   sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
@@ -57,6 +54,8 @@ function textBoxKeyPress() {
     return false;
   }
   cell2.innerHTML = rythm.options[rythm.selectedIndex].text;
+  col2Cont = col2Cont + setNotes(col2Cont, rythm.options[rythm.selectedIndex].text);
+  sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
   var meds = document.getElementById("medicationType");
@@ -64,6 +63,8 @@ function textBoxKeyPress() {
     return false;
   }
   cell3.innerHTML = meds.options[meds.selectedIndex].text;
+  col3Cont = col3Cont + setNotes(col3Cont, meds.options[meds.selectedIndex].text);
+  sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
   var dose = document.getElementById("doseType");
@@ -71,6 +72,8 @@ function textBoxKeyPress() {
     return false;
   }
   cell4.innerHTML = dose.options[dose.selectedIndex].text;
+  col4Cont = col3Cont + setNotes(col4Cont, dose.options[dose.selectedIndex].text);
+  sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
   var iv = document.getElementById("ivType");
@@ -78,6 +81,8 @@ function textBoxKeyPress() {
     return false;
   }
   cell5.innerHTML = iv.options[iv.selectedIndex].text;
+  col5Cont = col5Cont + setNotes(col5Cont, iv.options[iv.selectedIndex].text);
+  sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
   var shock = document.getElementById("shockType");
@@ -85,6 +90,8 @@ function textBoxKeyPress() {
     return false;
   }
   cell6.innerHTML = shock.options[shock.selectedIndex].text;
+  col6Cont = col6Cont + setNotes(col6Cont, shock.options[shock.selectedIndex].text);
+  sessionStorage.setItem('col6Cont', col4Cont);
 
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
