@@ -1,9 +1,9 @@
-var tableConts = sessionStorage.getItem("strTable");
+var notesConts = sessionStorage.getItem("strTable");
 var rowCount = sessionStorage.getItem("tableRows");
+var col1Data = sessionStorage.getItem("col1Cont");
+console.log(col1Data);
 var i = 1;
-
-
-console.log(rowCount);
+var conts = "";
 
 document.addEventListener('DOMContentLoaded', function() {
   addRows(rowCount);
@@ -19,17 +19,17 @@ function getParams(){
   return params;
 };
 
-function getText(){
+function getText(conts){
   var loc1 = 0;
-  var loc2 = tableConts.indexOf("-");
+  var loc2 = conts.indexOf("--");
   if(loc2 == -1){
-    var str = tableConts;
+    var str = conts;
   } else {
-    var str = tableConts.substring(loc1, loc2);
+    var str = conts.substring(loc1, loc2);
   }
-  console.log("pre " + tableConts);
-  tableConts = tableConts.substring(loc2+1, tableConts.length);
-  console.log("post " + tableConts);
+  console.log("pre " + conts);
+  conts = conts.substring(loc2+2, conts.length);
+  console.log("post " + conts);
   console.log("str " + str);
   return str;
 };
@@ -52,7 +52,7 @@ function addRows(amount) {
   i++;
   amount--;
   //removes text and saves it to var
-  var text = getText();
+  var text = getText(notesConts);
 
   cell7.innerHTML = text;
   cell1.innerHTML = "-";

@@ -1,10 +1,16 @@
 var strTable = "";
+var col1Cont = "";
+var col2Cont = "";
+var col3Cont = "";
+var col4Cont = "";
+var col5Cont = "";
+var col6Cont = "";
+
 var tableRows = 0;
 
 function enterKeyPress(e) {
   e = e || window.event;
   if (e.keyCode == 13) {
-    console.log("HI");
     textBoxKeyPress();
     //keeps from submitting form
     return false;
@@ -17,7 +23,6 @@ function validateButton(type) {
     return false;
   } else {
     var selectedText = type.options[type.selectedIndex].text;
-    console.log(selectedText);
     return true;
   }
 }
@@ -40,6 +45,9 @@ function textBoxKeyPress() {
   var cell7 = row.insertCell(6);
   // add info to cells
   cell1.innerHTML = getCurrTime();
+  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  console.log(col1Cont);
+  sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
   var rythm = document.getElementById("rythmType");
@@ -82,12 +90,7 @@ function textBoxKeyPress() {
 
   cell7.innerHTML = text;
 
-  if(strTable != ""){
-    strTable = strTable + "-" + text;
-  } else{
-    strTable = text;
-  }
-  console.log(strTable);
+  strTable = strTable + setNotes(strTable, text);
 
   tableRows++;
 
@@ -97,8 +100,12 @@ function textBoxKeyPress() {
   return false;
 };
 
-function setNotes(text) {
-
+function setNotes(loc, text) {
+  if(loc != ""){
+    return "--" + text;
+  } else{
+    return text;
+  }
 }
 
 
