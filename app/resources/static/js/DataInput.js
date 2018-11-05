@@ -1,3 +1,6 @@
+var strTable = "";
+var tableRows = 0;
+
 function enterKeyPress(e) {
   e = e || window.event;
   if (e.keyCode == 13) {
@@ -35,9 +38,7 @@ function textBoxKeyPress() {
   var cell5 = row.insertCell(4);
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
-
   // add info to cells
-  // add time
   cell1.innerHTML = getCurrTime();
 
   // input into rythm
@@ -78,22 +79,26 @@ function textBoxKeyPress() {
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
   textBox.value = "";
+
   cell7.innerHTML = text;
-  
-  i++;
 
 
-  sendData(text);
+  strTable = strTable + "-" + text;
+  console.log(strTable);
 
-}
+  tableRows++;
+
+  sessionStorage.setItem('strTable', strTable);
+  sessionStorage.setItem('tableRows', tableRows);
+  //keeps from submitting form
+  return false;
+};
 
 function setNotes(text) {
 
 }
 
-function sendData(text) {
-  console.log(text);
-}
+
 
 
 var currentdate = new Date();
@@ -116,6 +121,6 @@ function getCurrTime() {
 
 function onSubmit() {
   sessionStorage.setItem("patientName", document.getElementById("pName").value);
-  sessionStorage.setItem("MR", document.getElementById("MR#").value);
+  sessionStorage.setItem("MR", document.getElementById("MR").value);
   sessionStorage.setItem("location", document.getElementById("Location").value);
 }
