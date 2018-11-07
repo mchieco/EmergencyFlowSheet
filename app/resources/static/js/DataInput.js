@@ -156,3 +156,16 @@ function onSubmit() {
   sessionStorage.setItem("MR", document.getElementById("MR").value);
   sessionStorage.setItem("location", document.getElementById("Location").value);
 }
+
+function ResetButton() {  
+  var dropDown = document.getElementById("rythmType");  
+  dropDown.selectedIndex = 0;  
+  var dropDown = document.getElementById("medicationType");  
+  dropDown.selectedIndex = 0;  
+  var dropDown = document.getElementById("doseType");  
+  dropDown.selectedIndex = 0;  
+  var dropDown = document.getElementById("ivType");  
+  dropDown.selectedIndex = 0;  
+  var dropDown = document.getElementById("shockType");  
+  dropDown.selectedIndex = 0;  
+}  

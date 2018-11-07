@@ -37,6 +37,9 @@ input {
 .padding-left {
   padding-left: 25px;
 }
+.padding-bottom {
+  padding-bottom: 20px;
+}
 
 .footer {
   position: fixed;
@@ -52,11 +55,21 @@ input {
   height: 100px;
   width: 98%;
 }
+.input-group-sm {
+  height: 50px;
+  width: 98%;
+}
 
-.btncls {
+.btnadd {
+  display: block;
   margin-left: 25px;
-  float: right;
-  height: 100px;
+  height: 50px;
+  width: 100px;
+}
+.btnreset {
+  display: block;
+  margin-left: 25px;
+  height: 50px;
   width: 100px;
 }
 
