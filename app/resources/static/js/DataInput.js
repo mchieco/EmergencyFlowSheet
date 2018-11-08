@@ -77,7 +77,7 @@ function textBoxKeyPress() {
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
-  var iv = document.getElementById("ivType");
+  var iv = document.getElementById("airway");
   if (validateButton(iv) == false) {
     return false;
   }
@@ -164,7 +164,7 @@ function ResetButton() {
   dropDown.selectedIndex = 0;  
   var dropDown = document.getElementById("doseType");  
   dropDown.selectedIndex = 0;  
-  var dropDown = document.getElementById("ivType");  
+  var dropDown = document.getElementById("airway");  
   dropDown.selectedIndex = 0;  
   var dropDown = document.getElementById("shockType");  
   dropDown.selectedIndex = 0;  

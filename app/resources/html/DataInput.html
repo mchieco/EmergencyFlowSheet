@@ -79,7 +79,7 @@
       <div class="col-auto my-1 dropwidth">
         <label class="mr-sm-2" for="rythmSelectGroup">Medication</label>
         <select class="custom-select mr-sm-2" id="medicationType">
-          <option selected="selected"></option>
+          <option value="0" selected="selected"></option>
           <option value="1">Epinephrine</option>
           <option value="2">Amiodarone</option>
           <option value="3">Bolus</option>
@@ -91,7 +91,7 @@
       <div class="col-auto my-1 dropwidth">
         <label class="mr-sm-2" for="rythmSelectGroup">Dose</label>
         <select class="custom-select mr-sm-2" id="doseType">
-          <option selected="selected"></option>
+          <option value="0" selected="selected"></option>
           <option value="1">1 mg</option>
           <option value="2">150 mg</option>
           <option value="3">300 mg</option>
@@ -99,15 +99,11 @@
       </div>
 
       <div class="col-auto my-1 dropwidth">
-        <label class="mr-sm-2" for="rythmSelectGroup">IV Location</label>
-        <select class="custom-select mr-sm-2" id="ivType">
+        <label class="mr-sm-2" for="rythmSelectGroup">Airway</label>
+        <select class="custom-select mr-sm-2" id="airway">
           <option selected="selected"></option>
-          <option value="1">IV Started</option>
-          <option value="2">IV Ended</option>
-          <option value="3">Right Arm</option>
-          <option value="4">Left Arm</option>
-          <option value="5">Right Wrist</option>
-          <option value="6">Left Wrist</option>
+          <option value="1">Biphasic (120-200 J)</option>
+          <option value="2">Monophasic (360 J)</option>
         </select>
       </div>
 
@@ -144,7 +140,7 @@
             <th scope="col">Rhythm</th>
             <th scope="col">Medication</th>
             <th scope="col">Dose</th>
-            <th scope="col">IV</th>
+            <th scope="col">Airway</th>
             <th scope="col">Defib Joules</th>
             <th scope="col">Notes</th>
           </tr>
