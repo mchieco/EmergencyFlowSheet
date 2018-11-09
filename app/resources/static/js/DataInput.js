@@ -51,7 +51,7 @@ function textBoxKeyPress() {
 
   // input into rythm
   var rythm = document.getElementById("rythmType");
-  if(validateButton(rythm) == false){
+  if (validateButton(rythm) == false) {
     return false;
   }
   cell2.innerHTML = rythm.options[rythm.selectedIndex].text;
@@ -60,7 +60,7 @@ function textBoxKeyPress() {
 
   // input into meds
   var meds = document.getElementById("medicationType");
-  if(validateButton(meds) == false){
+  if (validateButton(meds) == false) {
     return false;
   }
   cell3.innerHTML = meds.options[meds.selectedIndex].text;
@@ -111,9 +111,9 @@ function textBoxKeyPress() {
 };
 
 function setNotes(loc, text) {
-  if(loc != ""){
+  if (loc != "") {
     return "--" + text;
-  } else{
+  } else {
     return text;
   }
 }
@@ -130,7 +130,7 @@ if (currentdate.getMinutes() < 10) {
   currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
 }
 
-function updateTime(){
+function updateTime() {
   currentdate = new Date();
   if (currentdate.getMinutes() < 10) {
     currTime = currentdate.getHours() + ":0" + currentdate.getMinutes();
@@ -139,7 +139,7 @@ function updateTime(){
   }
 }
 
-function updateDate(){
+function updateDate() {
   currentdate = new Date();
   currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
 }
@@ -157,15 +157,242 @@ function onSubmit() {
   sessionStorage.setItem("location", document.getElementById("Location").value);
 }
 
-function ResetButton() {  
-  var dropDown = document.getElementById("rythmType");  
-  dropDown.selectedIndex = 0;  
-  var dropDown = document.getElementById("medicationType");  
-  dropDown.selectedIndex = 0;  
-  var dropDown = document.getElementById("doseType");  
-  dropDown.selectedIndex = 0;  
-  var dropDown = document.getElementById("airway");  
-  dropDown.selectedIndex = 0;  
-  var dropDown = document.getElementById("shockType");  
-  dropDown.selectedIndex = 0;  
-}  
+function ResetButton() {
+  var dropDown = document.getElementById("rythmType");
+  dropDown.selectedIndex = 0;
+  var dropDown = document.getElementById("medicationType");
+  dropDown.selectedIndex = 0;
+  var dropDown = document.getElementById("doseType");
+  dropDown.selectedIndex = 0;
+  var dropDown = document.getElementById("airway");
+  dropDown.selectedIndex = 0;
+  var dropDown = document.getElementById("shockType");
+  dropDown.selectedIndex = 0;
+}
+
+function startCompressions() {
+  updateDate();
+  updateTime();
+  //move info to table
+  var textBox = document.getElementById('input_box');
+  var table = document.getElementById("datatable");
+  var i = 1;
+  // add a new row
+  var row = table.insertRow(i);
+  // add a cell to row
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  // add info to cells
+  cell1.innerHTML = getCurrTime();
+  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  sessionStorage.setItem('col1Cont', col1Cont);
+
+  // input into rythm
+  cell2.innerHTML = " ";
+  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  sessionStorage.setItem('col2Cont', col2Cont);
+
+  // input into meds
+  cell3.innerHTML = " ";
+  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  sessionStorage.setItem('col3Cont', col3Cont);
+
+  // input into dose
+  cell4.innerHTML = " ";
+  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  sessionStorage.setItem('col4Cont', col4Cont);
+
+  // input into iv
+  cell5.innerHTML = "";
+  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  sessionStorage.setItem('col5Cont', col5Cont);
+
+  // input into defib joules
+  cell6.innerHTML = " ";
+  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  sessionStorage.setItem('col6Cont', col6Cont);
+
+  cell7.innerHTML = "Compressions Started";
+  strTable = strTable + setNotes(strTable, "Compressions Started" + "");
+
+  tableRows++;
+
+  sessionStorage.setItem('strTable', strTable);
+  sessionStorage.setItem('tableRows', tableRows);
+  //keeps from submitting form
+  return false;
+};
+
+function endCompressions() {
+  updateDate();
+  updateTime();
+  //move info to table
+  var textBox = document.getElementById('input_box');
+  var table = document.getElementById("datatable");
+  var i = 1;
+  // add a new row
+  var row = table.insertRow(i);
+  // add a cell to row
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  // add info to cells
+  cell1.innerHTML = getCurrTime();
+  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  sessionStorage.setItem('col1Cont', col1Cont);
+
+  // input into rythm
+  cell2.innerHTML = " ";
+  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  sessionStorage.setItem('col2Cont', col2Cont);
+
+  // input into meds
+  cell3.innerHTML = " ";
+  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  sessionStorage.setItem('col3Cont', col3Cont);
+
+  // input into dose
+  cell4.innerHTML = " ";
+  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  sessionStorage.setItem('col4Cont', col4Cont);
+
+  // input into iv
+  cell5.innerHTML = "";
+  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  sessionStorage.setItem('col5Cont', col5Cont);
+
+  // input into defib joules
+  cell6.innerHTML = " ";
+  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  sessionStorage.setItem('col6Cont', col6Cont);
+
+  cell7.innerHTML = "Compressions Ended";
+  strTable = strTable + setNotes(strTable, "Compressions Ended"+ "");
+  tableRows++;
+
+  sessionStorage.setItem('strTable', strTable);
+  sessionStorage.setItem('tableRows', tableRows);
+  //keeps from submitting form
+  return false;
+};
+function startIV() {
+  updateDate();
+  updateTime();
+  //move info to table
+  var textBox = document.getElementById('input_box');
+  var table = document.getElementById("datatable");
+  var i = 1;
+  // add a new row
+  var row = table.insertRow(i);
+  // add a cell to row
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  // add info to cells
+  cell1.innerHTML = getCurrTime();
+  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  sessionStorage.setItem('col1Cont', col1Cont);
+
+  // input into rythm
+  cell2.innerHTML = " ";
+  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  sessionStorage.setItem('col2Cont', col2Cont);
+
+  // input into meds
+  cell3.innerHTML = " ";
+  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  sessionStorage.setItem('col3Cont', col3Cont);
+
+  // input into dose
+  cell4.innerHTML = " ";
+  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  sessionStorage.setItem('col4Cont', col4Cont);
+
+  // input into iv
+  cell5.innerHTML = "";
+  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  sessionStorage.setItem('col5Cont', col5Cont);
+
+  // input into defib joules
+  cell6.innerHTML = " ";
+  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  sessionStorage.setItem('col6Cont', col6Cont);
+
+  cell7.innerHTML = "Started IV";
+  strTable = strTable + setNotes(strTable, "Started IV"+ "");
+  tableRows++;
+
+  sessionStorage.setItem('strTable', strTable);
+  sessionStorage.setItem('tableRows', tableRows);
+  //keeps from submitting form
+  return false;
+};
+function endIV() {
+  updateDate();
+  updateTime();
+  //move info to table
+  var textBox = document.getElementById('input_box');
+  var table = document.getElementById("datatable");
+  var i = 1;
+  // add a new row
+  var row = table.insertRow(i);
+  // add a cell to row
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  var cell6 = row.insertCell(5);
+  var cell7 = row.insertCell(6);
+  // add info to cells
+  cell1.innerHTML = getCurrTime();
+  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  sessionStorage.setItem('col1Cont', col1Cont);
+
+  // input into rythm
+  cell2.innerHTML = " ";
+  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  sessionStorage.setItem('col2Cont', col2Cont);
+
+  // input into meds
+  cell3.innerHTML = " ";
+  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  sessionStorage.setItem('col3Cont', col3Cont);
+
+  // input into dose
+  cell4.innerHTML = " ";
+  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  sessionStorage.setItem('col4Cont', col4Cont);
+
+  // input into iv
+  cell5.innerHTML = "";
+  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  sessionStorage.setItem('col5Cont', col5Cont);
+
+  // input into defib joules
+  cell6.innerHTML = " ";
+  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  sessionStorage.setItem('col6Cont', col6Cont);
+
+  cell7.innerHTML = "Ended IV";
+  strTable = strTable + setNotes(strTable, "Ended IV" + "");
+  tableRows++;
+
+  sessionStorage.setItem('strTable', strTable);
+  sessionStorage.setItem('tableRows', tableRows);
+  //keeps from submitting form
+  return false;
+};

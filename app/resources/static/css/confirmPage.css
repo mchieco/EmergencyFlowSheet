@@ -2,6 +2,9 @@
 .mytext {
     width: 100%;
 }
+@page {
+  size: auto;
+}
 
 body {
     margin-bottom: 40px;
@@ -35,4 +38,9 @@ body {
 
 .print_btn{
 text-align: center;
+}
+@media print {
+  #printPageButton {
+    display: none;
+  }
 }
