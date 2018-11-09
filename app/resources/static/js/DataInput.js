@@ -216,9 +216,9 @@ function startCompressions() {
   cell6.innerHTML = " ";
   col6Cont = col6Cont + setNotes(col6Cont, " ");
   sessionStorage.setItem('col6Cont', col6Cont);
-
-  cell7.innerHTML = "Compressions Started";
-  strTable = strTable + setNotes(strTable, "Compressions Started" + "");
+  text = "\n" +"Compressions Started";
+  cell7.innerHTML = text;
+  strTable = strTable + setNotes(strTable,text);
 
   tableRows++;
 
@@ -275,8 +275,9 @@ function endCompressions() {
   col6Cont = col6Cont + setNotes(col6Cont, " ");
   sessionStorage.setItem('col6Cont', col6Cont);
 
-  cell7.innerHTML = "Compressions Ended";
-  strTable = strTable + setNotes(strTable, "Compressions Ended"+ "");
+  text = "\n" + "Compressions Ended";
+  cell7.innerHTML = text;
+  strTable = strTable + setNotes(strTable,text);
   tableRows++;
 
   sessionStorage.setItem('strTable', strTable);
@@ -331,8 +332,9 @@ function startIV() {
   col6Cont = col6Cont + setNotes(col6Cont, " ");
   sessionStorage.setItem('col6Cont', col6Cont);
 
-  cell7.innerHTML = "Started IV";
-  strTable = strTable + setNotes(strTable, "Started IV"+ "");
+  text = "\n" +"IV Started";
+  cell7.innerHTML = text;
+  strTable = strTable + setNotes(strTable,text);
   tableRows++;
 
   sessionStorage.setItem('strTable', strTable);
@@ -387,8 +389,9 @@ function endIV() {
   col6Cont = col6Cont + setNotes(col6Cont, " ");
   sessionStorage.setItem('col6Cont', col6Cont);
 
-  cell7.innerHTML = "Ended IV";
-  strTable = strTable + setNotes(strTable, "Ended IV" + "");
+  text = "\n" + "IV Ended";
+  cell7.innerHTML = text;
+  strTable = strTable + setNotes(strTable,text);
   tableRows++;
 
   sessionStorage.setItem('strTable', strTable);
