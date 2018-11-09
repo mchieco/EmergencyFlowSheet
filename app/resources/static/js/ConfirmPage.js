@@ -7,12 +7,14 @@ var col4Data = sessionStorage.getItem("col4Cont");
 var col5Data = sessionStorage.getItem("col5Cont");
 var col6Data = sessionStorage.getItem("col6Cont");
 
-console.log(col1Data);
-console.log(col2Data);
-console.log(col3Data);
-console.log(col4Data);
-console.log(col5Data);
-console.log(col6Data);
+console.log("Rows: " + rowCount);
+console.log("Ttme: " + col1Data);
+console.log("rythm: " + col2Data);
+console.log("medication: " + col3Data);
+console.log("dose: " + col4Data);
+console.log("airway: " + col5Data);
+console.log("defib: " + col6Data);
+console.log("notes: " + notesConts);
 
 var i = 1;
 
@@ -83,43 +85,53 @@ function addText(conts, key) {
 }
 
 function addRows(amount) {
+  for(x = 0; x < amount; x++){
+    //move info to table
+    var completeTable = document.getElementById('data');
+    // add a new row
 
-  //move info to table
-  var completeTable = document.getElementById('data');
-  // add a new row
-  var row = completeTable.insertRow(i);
-  // add a cell to row
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  var cell7 = row.insertCell(6);
-  // add info to cells
-  i++;
-  amount--;
-  //removes text and saves it to var
-  var oneText = addText(col1Data, "one");
-  var twoText = addText(col2Data, "two");
-  var threeText = addText(col3Data, "three");
-  var fourText = addText(col4Data, "four");
-  var fiveText = addText(col5Data, "five");
-  var sixText = addText(col6Data, "six");
-  var sevenText = addText(notesConts, "seven");
+    var row = completeTable.insertRow(i);
+    // add a cell to row
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
 
+    //removes the first -- and sets it to a var
+    if(i == 1) {
+      var oneText = addText(col1Data, "one");
+      var twoText = addText(col2Data, "two");
+      var threeText = addText(col3Data, "three");
+      var fourText = addText(col4Data, "four");
+      var fiveText = addText(col5Data, "five");
+      var sixText = addText(col6Data, "six");
+      var sevenText = addText(notesConts, "seven");
+    }
 
+    //removes text and saves it to var
+    var oneText = addText(col1Data, "one");
+    var twoText = addText(col2Data, "two");
+    var threeText = addText(col3Data, "three");
+    var fourText = addText(col4Data, "four");
+    var fiveText = addText(col5Data, "five");
+    var sixText = addText(col6Data, "six");
+    var sevenText = addText(notesConts, "seven");
 
-  cell7.innerHTML = sevenText;
-  cell1.innerHTML = oneText;
-  cell2.innerHTML = twoText;
-  cell3.innerHTML = threeText;
-  cell4.innerHTML = fourText;
-  cell5.innerHTML = fiveText;
-  cell6.innerHTML = sixText;
+    //sets the cells to the text
+    cell1.innerHTML = oneText;
+    cell2.innerHTML = twoText;
+    cell3.innerHTML = threeText;
+    cell4.innerHTML = fourText;
+    cell5.innerHTML = fiveText;
+    cell6.innerHTML = sixText;
+    cell7.innerHTML = sevenText;
 
-  if (amount > 0) {
-    addRows(amount);
+    //moves to the next row
+    i++;
+
   }
   //keeps from submitting form
   return false;

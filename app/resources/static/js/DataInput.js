@@ -46,7 +46,7 @@ function textBoxKeyPress() {
   var cell7 = row.insertCell(6);
   // add info to cells
   cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  col1Cont = col1Cont + setNotes(getCurrTime());
   sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
@@ -55,7 +55,7 @@ function textBoxKeyPress() {
     return false;
   }
   cell2.innerHTML = rythm.options[rythm.selectedIndex].text;
-  col2Cont = col2Cont + setNotes(col2Cont, rythm.options[rythm.selectedIndex].text);
+  col2Cont = col2Cont + setNotes(rythm.options[rythm.selectedIndex].text);
   sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
@@ -64,7 +64,7 @@ function textBoxKeyPress() {
     return false;
   }
   cell3.innerHTML = meds.options[meds.selectedIndex].text;
-  col3Cont = col3Cont + setNotes(col3Cont, meds.options[meds.selectedIndex].text);
+  col3Cont = col3Cont + setNotes(meds.options[meds.selectedIndex].text);
   sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
@@ -73,7 +73,7 @@ function textBoxKeyPress() {
     return false;
   }
   cell4.innerHTML = dose.options[dose.selectedIndex].text;
-  col4Cont = col4Cont + setNotes(col4Cont, dose.options[dose.selectedIndex].text);
+  col4Cont = col4Cont + setNotes(dose.options[dose.selectedIndex].text);
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
@@ -82,7 +82,7 @@ function textBoxKeyPress() {
     return false;
   }
   cell5.innerHTML = iv.options[iv.selectedIndex].text;
-  col5Cont = col5Cont + setNotes(col5Cont, iv.options[iv.selectedIndex].text);
+  col5Cont = col5Cont + setNotes(iv.options[iv.selectedIndex].text);
   sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
@@ -91,7 +91,7 @@ function textBoxKeyPress() {
     return false;
   }
   cell6.innerHTML = shock.options[shock.selectedIndex].text;
-  col6Cont = col6Cont + setNotes(col6Cont, shock.options[shock.selectedIndex].text);
+  col6Cont = col6Cont + setNotes(shock.options[shock.selectedIndex].text);
   sessionStorage.setItem('col6Cont', col6Cont);
 
   //removes text and saves it to var
@@ -100,7 +100,7 @@ function textBoxKeyPress() {
 
   cell7.innerHTML = text;
 
-  strTable = strTable + setNotes(strTable, text);
+  strTable = strTable + setNotes(text);
 
   tableRows++;
 
@@ -110,12 +110,12 @@ function textBoxKeyPress() {
   return false;
 };
 
-function setNotes(loc, text) {
-  if (loc != "") {
-    return "--" + text;
-  } else {
-    return text;
-  }
+function setNotes(text) {
+  // if (loc != "") {
+     return "--" + text;
+  // } else {
+  //   return text;
+  // }
 }
 
 
@@ -189,36 +189,36 @@ function startCompressions() {
   var cell7 = row.insertCell(6);
   // add info to cells
   cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  col1Cont = col1Cont + setNotes(getCurrTime());
   sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
   cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  col2Cont = col2Cont + setNotes(" ");
   sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
   cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  col3Cont = col3Cont + setNotes(" ");
   sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
   cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  col4Cont = col4Cont + setNotes(" ");
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
   cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  col5Cont = col5Cont + setNotes(" ");
   sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
   cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  col6Cont = col6Cont + setNotes(" ");
   sessionStorage.setItem('col6Cont', col6Cont);
-  text = "\n" +"Compressions Started";
+  text = "Compressions Started";
   cell7.innerHTML = text;
-  strTable = strTable + setNotes(strTable,text);
+  strTable = strTable + setNotes(text);
 
   tableRows++;
 
@@ -247,37 +247,37 @@ function endCompressions() {
   var cell7 = row.insertCell(6);
   // add info to cells
   cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  col1Cont = col1Cont + setNotes(getCurrTime());
   sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
   cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  col2Cont = col2Cont + setNotes(" ");
   sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
   cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  col3Cont = col3Cont + setNotes(" ");
   sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
   cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  col4Cont = col4Cont + setNotes(" ");
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
   cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  col5Cont = col5Cont + setNotes(" ");
   sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
   cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  col6Cont = col6Cont + setNotes(" ");
   sessionStorage.setItem('col6Cont', col6Cont);
 
-  text = "\n" + "Compressions Ended";
+  text = "Compressions Ended";
   cell7.innerHTML = text;
-  strTable = strTable + setNotes(strTable,text);
+  strTable = strTable + setNotes(text);
   tableRows++;
 
   sessionStorage.setItem('strTable', strTable);
@@ -304,37 +304,37 @@ function startIV() {
   var cell7 = row.insertCell(6);
   // add info to cells
   cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  col1Cont = col1Cont + setNotes(getCurrTime());
   sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
   cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  col2Cont = col2Cont + setNotes(" ");
   sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
   cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  col3Cont = col3Cont + setNotes(" ");
   sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
   cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  col4Cont = col4Cont + setNotes(" ");
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
   cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  col5Cont = col5Cont + setNotes(" ");
   sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
   cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  col6Cont = col6Cont + setNotes(" ");
   sessionStorage.setItem('col6Cont', col6Cont);
 
-  text = "\n" +"IV Started";
+  text = "IV Started";
   cell7.innerHTML = text;
-  strTable = strTable + setNotes(strTable,text);
+  strTable = strTable + setNotes(text);
   tableRows++;
 
   sessionStorage.setItem('strTable', strTable);
@@ -361,37 +361,37 @@ function endIV() {
   var cell7 = row.insertCell(6);
   // add info to cells
   cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(col1Cont, getCurrTime());
+  col1Cont = col1Cont + setNotes(getCurrTime());
   sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
   cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(col2Cont, " ");
+  col2Cont = col2Cont + setNotes(" ");
   sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
   cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(col3Cont, " ");
+  col3Cont = col3Cont + setNotes(" ");
   sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
   cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(col4Cont, " ");
+  col4Cont = col4Cont + setNotes(" ");
   sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
   cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(col5Cont, " ");
+  col5Cont = col5Cont + setNotes(" ");
   sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
   cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(col6Cont, " ");
+  col6Cont = col6Cont + setNotes(" ");
   sessionStorage.setItem('col6Cont', col6Cont);
 
-  text = "\n" + "IV Ended";
+  text = "IV Ended";
   cell7.innerHTML = text;
-  strTable = strTable + setNotes(strTable,text);
+  strTable = strTable + setNotes(text);
   tableRows++;
 
   sessionStorage.setItem('strTable', strTable);
