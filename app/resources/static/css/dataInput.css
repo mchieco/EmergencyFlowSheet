@@ -4,6 +4,7 @@ body {
   margin-bottom: 100px;
   clear: both;
 }
+
 label {
   width: 200px;
   float: left;
@@ -37,9 +38,11 @@ input {
 .padding-top2 {
   padding-top: 15px;
 }
+
 .padding-left {
   padding-left: 25px;
 }
+
 .padding-bottom {
   padding-bottom: 20px;
 }
@@ -58,6 +61,7 @@ input {
   height: 100px;
   width: 98%;
 }
+
 .input-group-sm {
   height: 50px;
   width: 98%;
@@ -69,6 +73,7 @@ input {
   height: 50px;
   width: 100px;
 }
+
 .btnreset {
   display: block;
   margin-left: 25px;
@@ -76,6 +81,6 @@ input {
   width: 100px;
 }
 
-.dropwidth{
+.dropwidth {
   width: 250px;
 }

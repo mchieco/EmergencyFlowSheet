@@ -112,14 +112,11 @@ function textBoxKeyPress() {
 
 function setNotes(text) {
   // if (loc != "") {
-     return "--" + text;
+  return "--" + text;
   // } else {
   //   return text;
   // }
 }
-
-
-
 
 var currentdate = new Date();
 var currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
@@ -143,6 +140,7 @@ function updateDate() {
   currentdate = new Date();
   currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
 }
+
 function getCurrDate() {
   return currDate;
 }
@@ -285,6 +283,7 @@ function endCompressions() {
   //keeps from submitting form
   return false;
 };
+
 function startIV() {
   updateDate();
   updateTime();
@@ -342,6 +341,7 @@ function startIV() {
   //keeps from submitting form
   return false;
 };
+
 function endIV() {
   updateDate();
   updateTime();
