@@ -153,6 +153,7 @@ function onSubmit() {
   sessionStorage.setItem("patientName", document.getElementById("pName").value);
   sessionStorage.setItem("MR", document.getElementById("MR").value);
   sessionStorage.setItem("location", document.getElementById("Location").value);
+  sessionStorage.setItem("patientAllergies", document.getElementById("allergies").value);
 }
 
 function ResetButton() {

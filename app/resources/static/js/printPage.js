@@ -136,7 +136,4 @@ function addRows(amount) {
   //keeps from submitting form
   return false;
 };
-
-function onSubmit() {
-    
-}
+  

@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    <title>Confirm Page</title>
-    <meta name="description" content="confirmPage">
+    <title>Emergency Flow Sheet QU</title>
+    <meta name="description" content="printPage">
     <meta name="author" content="Mattc">
 
-    <link rel="stylesheet" href="../static//css/confirmPage.css" />
+    <link rel="stylesheet" href="../static//css/printPage.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -21,105 +21,112 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <script src="../static/js/ConfirmPage.js" type="text/javascript"></script>
+    <script src="../static/js/printPage.js" type="text/javascript"></script>
 
 </head>
 
 <body>
-    <form action="printPage.html" method="GET" id="my_form2">
-        <div class="containerbox">
-            <div class="boxed">
+    <div class="containerbox">
+        <div class="boxed">
+            <form>
                 <strong>Date:</strong>
                 <br />
                 <script>
                     document.write(sessionStorage.getItem('date'));
                 </script>
-                <br />
+            </form>
+            <form>
                 <strong>Time:</strong>
                 <br />
                 <script>
                     document.write(sessionStorage.getItem("time"));
                 </script>
-                <br />
+            </form>
+            <form>
                 <strong>Location:</strong>
                 <br />
                 <script>
                     document.write(getParams().Location.replace("+", " "));
                 </script>
-                <br />
-            </div>
-            <div class='boxed'>
+            </form>
+        </div>
+        <div class='boxed'>
+            <form>
                 <strong>Cardiac Arrest MD:</strong>
-                <br />
-                <input type="text" name="MD" required>
-                <br />
+                <!--add code to get from the previous page-->
+            </form>
+            <form>
                 <strong>Anesthesiologist:</strong>
-                <br />
-                <input type="text" name="Anesthesiologist" required>
-                <br />
+                <!--add code to get from the previous page-->
+            </form>
+            <form>
                 <strong>Nurse:</strong>
-                <br />
-                <input type="text" name="RecNurse" required>
-            </div>
-            <div class="boxed">
+                <!--add code to get from the previous page-->
+            </form>
+        </div>
+        <div class="boxed">
+            <form>
                 <strong>Medical Preperation Nurse:</strong>
-                <br />
-                <input type="text" name="MedPrep" required>
-                <br />
+                <!--add code to get from the previous page-->
+            </form>
+            <form>
                 <strong>Other:</strong>
-                <br />
-                <input type="text" name="Other" required>
-                <br />
+                <!--add code to get from the previous page-->
+            </form>
+            <form>
                 <strong>Patient Allergies:</strong>
                 <br />
                 <script>
                     name = getParams().patientAllergies.replace("+", " ");
                     document.write(name);
                 </script>
-                <br />
-            </div>
-            <div class="boxed">
+            </form>
+        </div>
+        <div class="boxed">
+            <form>
                 <strong>Patient Name:</strong>
                 <br />
                 <script>
                     name = getParams().pName.replace("+", " ");
                     document.write(name);
                 </script>
-                <br />
+            </form>
+            <form>
                 <strong>MR#:</strong>
                 <br />
                 <script>
                     document.write(getParams().MR);
                 </script>
-                <br />
-
-            </div>
-
-        </div>
-        <strong>Comments:</strong>
-        <textarea rows="3" name="comments" class="mytext"></textarea>
+            </form>
         </div>
 
-        <!--Table-->
-        <div class="padding-top">
-            <table id="data" contenteditable="true" class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th contenteditable="false" scope="col">Time</th>
-                        <th contenteditable="false" scope="col">Rhythm</th>
-                        <th contenteditable="false" scope="col">Medication</th>
-                        <th contenteditable="false" scope="col">Dose</th>
-                        <th contenteditable="false" scope="col">Airway</th>
-                        <th contenteditable="false" scope="col">Defib Joules</th>
-                        <th contenteditable="false" scope="col">Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-        <table>
+    </div>
+    <strong>Comments:</strong>
+    <!--add code to get from the previous page-->
+    </form>
+    </div>
+
+    <!--Table-->
+    <div class="padding-top">
+        <table id="data" contenteditable="true" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th contenteditable="false" scope="col">Time</th>
+                    <th contenteditable="false" scope="col">Rhythm</th>
+                    <th contenteditable="false" scope="col">Medication</th>
+                    <th contenteditable="false" scope="col">Dose</th>
+                    <th contenteditable="false" scope="col">Airway</th>
+                    <th contenteditable="false" scope="col">Defib Joules</th>
+                    <th contenteditable="false" scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
         </table>
+    </div>
+    <table>
+    </table>
+    <form>
         Reason Resuscitation Ended:<br>
         <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
         <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
@@ -129,19 +136,18 @@
         <br>
         <input type="checkbox" id="family_notified" value="family_notified" required> Family Notified <br>
         <input type="checkbox" id="family_notified_event" value="family_notified_event" required> of Event <br>
-        <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome
-        <br>
+        <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome <br>
         Time: <br>
         <input type="time" name="time" required><br>
         <br>
-        <!--Submit Button -->
-        <div class="padding-top position: center">
-            <input type="submit" id="submit_btn2" value="Submit" />
-        </div>
     </form>
+    <div class="print_btn">
+        <input id="printPageButton" type="button" onclick="window.print();" value="Print" />
+    </div>
     <div class="footer">
         <p>Quinnipiac University Emergency Flow Sheet</p>
     </div>
+    </form>
 
 </body>
 
