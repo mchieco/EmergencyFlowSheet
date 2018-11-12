@@ -10,6 +10,34 @@ body {
     margin-bottom: 40px;
 }
 
+.checkbox-style {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  border: 1px solid #D3D3D3;
+}
+
+.submit_btn{
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.sigboxes{
+  margin: auto;
+  padding-right: 15px;
+  padding-top: 5px;
+}
+
+.sigboxes.bottom {
+  display: inline-block;
+  margin: auto;
+  padding-bottom: 15px;
+}
+
 .footer {
     position: fixed;
     left: 0;
