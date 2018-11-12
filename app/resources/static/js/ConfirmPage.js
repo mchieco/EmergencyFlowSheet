@@ -85,7 +85,7 @@ function addText(conts, key) {
 }
 
 function addRows(amount) {
-  for(x = 0; x < amount; x++){
+  for (x = 0; x < amount; x++) {
     //move info to table
     var completeTable = document.getElementById('data');
     // add a new row
@@ -101,7 +101,7 @@ function addRows(amount) {
     var cell7 = row.insertCell(6);
 
     //removes the first -- and sets it to a var
-    if(i == 1) {
+    if (i == 1) {
       var oneText = addText(col1Data, "one");
       var twoText = addText(col2Data, "two");
       var threeText = addText(col3Data, "three");
@@ -138,5 +138,9 @@ function addRows(amount) {
 };
 
 function onSubmit() {
-    
+  sessionStorage.setItem("MDName", document.getElementById("MD").value);
+  sessionStorage.setItem("Anesthesiologist", document.getElementById("Anesthesiologist").value);
+  sessionStorage.setItem("RecNurse", document.getElementById("RecNurse").value);
+  sessionStorage.setItem("MedPrep", document.getElementById("MedPrep").value);
+  sessionStorage.setItem("Other", document.getElementById("Other").value);
 }
