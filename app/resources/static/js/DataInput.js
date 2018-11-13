@@ -10,10 +10,12 @@ var tableRows = 0;
 
 function enterKeyPress(e) {
   e = e || window.event;
-  if (e.keyCode == 13) {
+  if (e.keyCode == 13 || event.which == 13) {
+    var inputBtn = document.getElementById("input_box");
     textBoxKeyPress();
-    //keeps from submitting form
     return false;
+  } else {
+    return true;
   }
 }
 
