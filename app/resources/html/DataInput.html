@@ -78,9 +78,14 @@
           <option value="0" selected="selected"></option>
           <option value="1">Epinephrine</option>
           <option value="2">Amiodarone</option>
-          <option value="3">Bolus</option>
+          <option value="3">Lidocaine</option>
           <option value="4">Dopamine</option>
-          <option value="5">Norepinephrine</option>
+          <option value="5">Dextrose</option>
+          <option value="6">Adenosin</option>
+          <option value="7">Magnesium</option>
+          <option value="8">Atropine</option>
+          <option value="9">Sodium Bicarbonate</option>
+          <option value="10">Calcium Chloride</option>
         </select>
       </div>
 
@@ -89,8 +94,18 @@
         <select class="custom-select mr-sm-2" id="doseType">
           <option value="0" selected="selected"></option>
           <option value="1">1 mg</option>
-          <option value="2">150 mg</option>
-          <option value="3">300 mg</option>
+          <option value="2">6 mg</option>
+          <option value="3">150 mg</option>
+          <option value="4">300 mg</option>
+          <option value="5">50mEq</option>
+          <option value="6">1 gm</option>
+          <option value="7">50%</option>
+          <option value="8">400 mg/250 ml IV Bag</option>
+          <option value="9">2 gm/250 ml IV Bag</option>
+          <option value="10">1 mg/10 ml Syringe</option>
+          <option value="11">1 mg/kg</option>
+          <option value="12">0.5 mg/kg</option>
+          <option value="13">0.75 mg/kg</option>
         </select>
       </div>
 
@@ -98,8 +113,9 @@
         <label class="mr-sm-2" for="rythmSelectGroup">Airway</label>
         <select class="custom-select mr-sm-2" id="airway">
           <option selected="selected"></option>
-          <option value="1">Biphasic (120-200 J)</option>
-          <option value="2">Monophasic (360 J)</option>
+          <option value="1">Intubated</option>
+          <option value="2">Nasal Cannula</option>
+          <option value="3">Mask</option>
         </select>
       </div>
 
@@ -107,8 +123,9 @@
         <label class="mr-sm-2" for="rythmSelectGroup">Shock</label>
         <select class="custom-select mr-sm-2" id="shockType">
           <option value="0" selected="selected"></option>
-          <option value="1">Biphasic (120-200 J)</option>
-          <option value="2">Monophasic (360 J)</option>
+          <option value="1">200 Joules</option>
+          <option value="2">300 Joules</option>
+          <option value="3">360 Joules</option>
         </select>
       </div>
     </div>
@@ -154,7 +171,7 @@
     </div>
 
     <!--Submit Button -->
-    <div class="padding-top padding-left">
+    <div class="padding-top" style="text-align: center">
       <input type="submit" id="submit_btn" value="Submit" />
     </div>
 

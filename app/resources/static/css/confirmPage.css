@@ -64,11 +64,9 @@ body {
       width: 100%;
   }
 
-.print_btn{
-text-align: center;
-}
 @media print {
   #printPageButton {
     display: none;
   }
 }
+

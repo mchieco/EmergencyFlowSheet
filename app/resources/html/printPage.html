@@ -53,7 +53,7 @@
         <div class='boxed'>
             <form>
                 <strong>Cardiac Arrest MD:</strong>
-                <br/>
+                <br />
                 <script>
                     name = getParams().MD.replace("+", " ");
                     document.write(name);
@@ -61,15 +61,15 @@
             </form>
             <form>
                 <strong>Anesthesiologist:</strong>
-                <br/>
+                <br />
                 <script>
                     name = getParams().Anesthesiologist.replace("+", " ");
                     document.write(name);
                 </script>
             </form>
             <form>
-                <strong>Nurse:</strong>
-                <br/>
+                <strong>Recording Nurse:</strong>
+                <br />
                 <script>
                     name = getParams().RecNurse.replace("+", " ");
                     document.write(name);
@@ -79,7 +79,7 @@
         <div class="boxed">
             <form>
                 <strong>Medical Preperation Nurse:</strong>
-                <br/>
+                <br />
                 <script>
                     name = getParams().MedPrep.replace("+", " ");
                     document.write(name);
@@ -87,7 +87,7 @@
             </form>
             <form>
                 <strong>Other:</strong>
-                <br/>
+                <br />
                 <script>
                     name = getParams().MedPrep.replace("+", " ");
                     document.write(name);
@@ -147,22 +147,59 @@
     <table>
     </table>
     <form>
-        Reason Resuscitation Ended:<br>
-        <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
-        <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
-        <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
-        <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
-        <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
-        <br>
-        <input type="checkbox" id="family_notified" value="family_notified" required> Family Notified <br>
-        <input type="checkbox" id="family_notified_event" value="family_notified_event" required> of Event <br>
-        <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome" required> of Outcome <br>
-        Time: <br>
-        <input type="time" name="time" required><br>
-        <br>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="checkbox-style col-4">
+                    Patient Outcome:<br />
+                    <input type="radio" name="outcome" value="alive"> Alive </br>
+                    <input type="radio" name="outcome" value="deceased"> Deceased </br>
+                    <br />
+                    Transferred To:<br />
+                    <input type="radio" name="trans" value="icu"> ICU </br>
+                    <input type="radio" name="trans" value="morgue"> Morgue </br>
+                    <input type="radio" name="trans" value="other"> Other Facility </br>
+                    <input type="radio" name="trans" value="stay"> Stayed on Unit </br>
+                    <br />
+                    Reason Resuscitation Ended:<br>
+                    <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
+                    <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
+                    <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC)
+                    <br>
+                    <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
+                    <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
+                    <br>
+                    <input type="checkbox" id="family_notified" value="family_notified"> Family Notified <br>
+                    <input type="checkbox" id="family_notified_event" value="family_notified_event"> of Event <br>
+                    <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome"> of Outcome<br>
+                    Time Recorded: <br>
+                    <input type="time" name="time" required><br>
+                    <br>
+                </div>
+                <div class="checkbox-style">
+                    <div class="sigboxes">
+                        <strong>All Signitures</strong><br>
+                        Cardiac Arrest MD: <br>
+                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                    </div>
+                    <div class="sigboxes">
+                        Medical Preperation Nurse: <br>
+                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                    </div>
+                    <div class="sigboxes">
+                        Anesthesiologist: <br>
+                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                    </div>
+                    <div class="sigboxes bottom">
+                        Recording Nurse: <br>
+                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
     <div class="print_btn">
-        <input id="printPageButton" type="button" onclick="window.print();" value="Print" />
+        <input style="width: 200px; border: 1px solid #D3D3D3;" id="printPageButton" type="button" onclick="window.print();"
+            value="Print" />
     </div>
     <div class="footer">
         <p>Quinnipiac University Emergency Flow Sheet</p>
