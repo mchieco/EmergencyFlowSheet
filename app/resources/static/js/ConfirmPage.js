@@ -1,3 +1,4 @@
+//gets the info from the data input table
 var notesConts = sessionStorage.getItem("strTable");
 var rowCount = sessionStorage.getItem("tableRows");
 var col1Data = sessionStorage.getItem("col1Cont");
@@ -7,8 +8,21 @@ var col4Data = sessionStorage.getItem("col4Cont");
 var col5Data = sessionStorage.getItem("col5Cont");
 var col6Data = sessionStorage.getItem("col6Cont");
 
+//update info for code started and code finished
+rowCount++;
+rowCount++;
+updateTime();
+col1Data = col1Data + "--" + getCurrTime();
+col2Data = col2Data + "--";
+col3Data = col3Data + "--";
+col4Data = col4Data + "--";
+col5Data = col5Data + "--";
+col6Data = col6Data + "--";
+notesConts = notesConts + "--Code Finished";
+
+//logs all the info
 console.log("Rows: " + rowCount);
-console.log("Ttme: " + col1Data);
+console.log("Time: " + col1Data);
 console.log("rythm: " + col2Data);
 console.log("medication: " + col3Data);
 console.log("dose: " + col4Data);
@@ -17,11 +31,12 @@ console.log("defib: " + col6Data);
 console.log("notes: " + notesConts);
 
 var i = 1;
-
+//called when the page loads
 document.addEventListener('DOMContentLoaded', function () {
   addRows(rowCount);
 }, false);
 
+//gets parameters from the url
 function getParams() {
   var params = {};
   var param_array = window.location.href.split('?')[1].split('&');
@@ -32,6 +47,7 @@ function getParams() {
   return params;
 };
 
+//finds the text to add to each cell
 function addText(conts, key) {
   var loc1 = 0;
   var loc2 = conts.indexOf("--");
@@ -84,6 +100,7 @@ function addText(conts, key) {
   return text;
 }
 
+//adds the rows to the table and each cell
 function addRows(amount) {
   for (x = 0; x < amount; x++) {
     //move info to table
@@ -133,6 +150,7 @@ function addRows(amount) {
     i++;
 
   }
+
   //keeps from submitting form
   return false;
 };
@@ -143,4 +161,40 @@ function onSubmit() {
   sessionStorage.setItem("RecNurse", document.getElementById("RecNurse").value);
   sessionStorage.setItem("MedPrep", document.getElementById("MedPrep").value);
   sessionStorage.setItem("Other", document.getElementById("Other").value);
+}
+
+//sets the current date and time
+var currentdate = new Date();
+var currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
+var currTime;
+if (currentdate.getMinutes() < 10) {
+  currTime = currentdate.getHours() + ":0" + currentdate.getMinutes();
+} else {
+  currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
+}
+
+//updates the time
+function updateTime() {
+  currentdate = new Date();
+  if (currentdate.getMinutes() < 10) {
+    currTime = currentdate.getHours() + ":0" + currentdate.getMinutes();
+  } else {
+    currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
+  }
+}
+
+//updates the date
+function updateDate() {
+  currentdate = new Date();
+  currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
+}
+
+//gets the date
+function getCurrDate() {
+  return currDate;
+}
+
+//sets the time
+function getCurrTime() {
+  return currTime;
 }

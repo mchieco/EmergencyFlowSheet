@@ -34,17 +34,17 @@
       <label for="Date">
         <span>Date</span>
         <script>
-          var date = getCurrDate();
-          document.write(date);
-          sessionStorage.setItem('date', date);
+        var date = getCurrDate();
+        document.write(date);
+        sessionStorage.setItem('date', date);
         </script>
       </label>
       <label for="Time">
         <span>Time</span>
         <script>
-          var time = getCurrTime();
-          document.write(time);
-          sessionStorage.setItem('time', time);
+        var time = getCurrTime();
+        document.write(time);
+        sessionStorage.setItem('time', time);
         </script>
       </label>
       <label for="Location">
@@ -56,7 +56,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Patient Allergies</span>
       </div>
-      <input type="text" class="form-control" id="allergies" aria-label="With textarea"></textarea>
+      <input type="text" class="form-control" name="patientAllergies" id="allergies" aria-label="With textarea"></textarea>
     </div>
     <!-- Button Group -->
     <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
@@ -163,6 +163,19 @@
             <th scope="col">Airway</th>
             <th scope="col">Defib Joules</th>
             <th scope="col">Notes</th>
+          </tr>
+          <tr>
+            <th scope="col">
+              <script>
+              document.write(getCurrTime());
+              </script>
+            </th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Code Started</th>
           </tr>
         </thead>
         <tbody>

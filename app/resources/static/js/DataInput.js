@@ -1,13 +1,17 @@
-var strTable = "";
-var col1Cont = "";
-var col2Cont = "";
-var col3Cont = "";
-var col4Cont = "";
-var col5Cont = "";
-var col6Cont = "";
+//adds the code started info
+var strTable = "--Code Started";
+updateTime();
+var col1Cont = "--" + getCurrTime();
+var col2Cont = "--";
+var col3Cont = "--";
+var col4Cont = "--";
+var col5Cont = "--";
+var col6Cont = "--";
 
+//sets the number of rows
 var tableRows = 0;
 
+//detects enter key presses
 function enterKeyPress(e) {
   e = e || window.event;
   if (e.keyCode == 13) {
@@ -27,13 +31,14 @@ function validateButton(type) {
   }
 }
 
+//add button functionality
 function textBoxKeyPress() {
   updateDate();
   updateTime();
   //move info to table
   var textBox = document.getElementById('input_box');
   var table = document.getElementById("datatable");
-  var i = 1;
+  var i = 2;
   // add a new row
   var row = table.insertRow(i);
   // add a cell to row
@@ -110,14 +115,12 @@ function textBoxKeyPress() {
   return false;
 };
 
+//adds the key to indicate the next row was started
 function setNotes(text) {
-  // if (loc != "") {
   return "--" + text;
-  // } else {
-  //   return text;
-  // }
 }
 
+//sets the current date and time
 var currentdate = new Date();
 var currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
 var currTime;
@@ -127,6 +130,7 @@ if (currentdate.getMinutes() < 10) {
   currTime = currentdate.getHours() + ":" + currentdate.getMinutes();
 }
 
+//updates the time
 function updateTime() {
   currentdate = new Date();
   if (currentdate.getMinutes() < 10) {
@@ -136,26 +140,23 @@ function updateTime() {
   }
 }
 
+//updates the date
 function updateDate() {
   currentdate = new Date();
   currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();
 }
 
+//gets the date
 function getCurrDate() {
   return currDate;
 }
 
+//sets the time
 function getCurrTime() {
   return currTime;
 }
 
-function onSubmit() {
-  sessionStorage.setItem("patientName", document.getElementById("pName").value);
-  sessionStorage.setItem("MR", document.getElementById("MR").value);
-  sessionStorage.setItem("location", document.getElementById("Location").value);
-  sessionStorage.setItem("patientAllergies", document.getElementById("allergies").value);
-}
-
+//reset button functionality
 function ResetButton() {
   var dropDown = document.getElementById("rythmType");
   dropDown.selectedIndex = 0;
@@ -169,6 +170,7 @@ function ResetButton() {
   dropDown.selectedIndex = 0;
 }
 
+//start compression functionality
 function startCompressions() {
   updateDate();
   updateTime();
@@ -227,6 +229,7 @@ function startCompressions() {
   return false;
 };
 
+//end compression button functionality
 function endCompressions() {
   updateDate();
   updateTime();
@@ -285,6 +288,7 @@ function endCompressions() {
   return false;
 };
 
+//start IV button functionality
 function startIV() {
   updateDate();
   updateTime();
@@ -343,6 +347,7 @@ function startIV() {
   return false;
 };
 
+//end IV button functionality
 function endIV() {
   updateDate();
   updateTime();
