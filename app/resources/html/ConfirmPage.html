@@ -48,6 +48,7 @@
         <script>
         //writes the location from the data input page
         document.write(getParams().Location.replace("+", " "));
+        sessionStorage.setItem("location", getParams().Location.replace("+", " "));
         </script>
         <br />
       </div>
@@ -77,8 +78,9 @@
         <br />
         <script>
         //writes the allegies from the data input page
-        name = getParams().patientAllergies.replace("+", " ");
-        document.write(name);
+        pAllergies = getParams().patientAllergies.replace("+", " ");
+        sessionStorage.setItem("allergies", pAllergies);
+        document.write(pAllergies);
         </script>
         <br />
       </div>
@@ -88,13 +90,15 @@
         <script>
         //writes the name from the data input page
         name = getParams().pName.replace("+", " ");
+        sessionStorage.setItem("name", name);
         document.write(name);
         </script>
         <br />
         <strong>MR#:</strong>
         <br />
         <script>
-        document.write(getParams().MR);
+        document.write(getParams().MR.replace("+", " "));
+        sessionStorage.setItem("mr", getParams().MR.replace("+", " "));
         </script>
         <br />
 
@@ -102,12 +106,12 @@
 
     </div>
     <strong>Comments:</strong>
-    <textarea rows="3" name="comments" class="mytext"></textarea>
+    <textarea rows="3" name="comments" id="comments" class="mytext"></textarea>
   </div>
 
   <!--Table-->
   <div class="padding-top">
-    <table id="data" contenteditable="true" class="table table-bordered">
+    <table id="data_table" contenteditable="true" class="table table-bordered">
       <thead>
         <tr>
           <th contenteditable="false" scope="col">Time</th>
@@ -156,7 +160,7 @@
 
 
   <!--Submit Button -->
-  <div class="submit_btn" style="text-align: center">
+  <div class="submit_btn" onclick="onSubmit()" style="text-align: center">
     <input style="width: 200px; border: 1px solid #D3D3D3;" type="submit" id="submit_btn" value="Submit" onsubmit="return confirm('Once you submit you cannot change without appenind, do you still wish to submit?');" />
   </div>
 </form>

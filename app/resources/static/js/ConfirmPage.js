@@ -102,9 +102,9 @@ function addText(conts, key) {
 
 //adds the rows to the table and each cell
 function addRows(amount) {
-  for (x = 0; x < amount; x++) {
+  for (var x = 0; x < amount; x++) {
     //move info to table
-    var completeTable = document.getElementById('data');
+    var completeTable = document.getElementById('data_table');
     // add a new row
 
     var row = completeTable.insertRow(i);
@@ -156,11 +156,26 @@ function addRows(amount) {
 };
 
 function onSubmit() {
-  sessionStorage.setItem("MDName", document.getElementById("MD").value);
-  sessionStorage.setItem("Anesthesiologist", document.getElementById("Anesthesiologist").value);
-  sessionStorage.setItem("RecNurse", document.getElementById("RecNurse").value);
-  sessionStorage.setItem("MedPrep", document.getElementById("MedPrep").value);
-  sessionStorage.setItem("Other", document.getElementById("Other").value);
+  //gets table
+  var table = document.getElementById("data_table");
+  var tableData = "";
+  var cellCount = 7;
+
+  //cycles through the tables rows
+  for (var z = 0; z < rowCount; z++) {
+    var cells = table.rows.item(z).cells;
+
+    //cycles through the rows cells
+    for(var j = 0; j < cellCount; j++) {
+      var cellVal = cells.item(j).innerHTML;
+      //adds the data to the string with a -- as key to indicate a new cell was entered
+      tableData = tableData + "--" + cellVal;
+    }
+  }
+  //removes the header form the string
+  tableData = tableData.substring(63,tableData.length);
+  //passes the table in a string with
+  sessionStorage.setItem("data", tableData);
 }
 
 //sets the current date and time
