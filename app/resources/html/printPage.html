@@ -118,7 +118,11 @@
         <strong>Patient Allergies:</strong>
         <br />
         <script>
-            document.write(sessionStorage.getItem("allergies"));
+            if (sessionStorage.getItem("allergies") == "") {
+                document.write("No allergies");
+            } else {
+                document.write(sessionStorage.getItem("allergies"));
+            }
         </script>
     </form>
     <strong>Comments:</strong>
@@ -153,60 +157,60 @@
     </div>
     <table>
     </table>
-</div>
-<table>
-</table>
-<form>
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="checkbox-style col-4">
-                Patient Outcome:<br>
-                <script>
-                document.write(sessionStorage.getItem("patient_outcome"));
-                </script>
-                <br>
-                Transferred To:
-                <br>
-                <script>
-                document.write(sessionStorage.getItem("transferred_to"));
-                </script>
-                <br>
-                Reason Resuscitation Ended:
-                <br>
-                <script>
-                document.write(sessionStorage.getItem("resuscitation_ended"));
-                </script>
-                <br>
-                <script>
-                document.write(sessionStorage.getItem("family_notified"));
-                </script>
-                <br>
-                <script>
-                var time = getParams().time.replace("%3A", ":")
-                document.write("Time Recorded: " + time);
-                </script>
-            </div>
-                </div>
-                <div class="checkbox-style">
-                    <div class="sigboxes">
-                        <strong>All Signitures</strong><br>
-                        Cardiac Arrest MD: <br>
-                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-                    </div>
-                    <div class="sigboxes">
-                        Medical Preperation Nurse: <br>
-                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-                    </div>
-                    <div class="sigboxes">
-                        Anesthesiologist: <br>
-                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-                    </div>
-                    <div class="sigboxes bottom">
-                        Recording Nurse: <br>
-                        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-                    </div>
+    </div>
+    <table>
+    </table>
+    <form>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="checkbox-style col-4">
+                    Patient Outcome:<br>
+                    <script>
+                        document.write(sessionStorage.getItem("patient_outcome"));
+                    </script>
+                    <br>
+                    Transferred To:
+                    <br>
+                    <script>
+                        document.write(sessionStorage.getItem("transferred_to"));
+                    </script>
+                    <br>
+                    Reason Resuscitation Ended:
+                    <br>
+                    <script>
+                        document.write(sessionStorage.getItem("resuscitation_ended"));
+                    </script>
+                    <br>
+                    <script>
+                        document.write(sessionStorage.getItem("family_notified"));
+                    </script>
+                    <br>
+                    <script>
+                        var time = getParams().time.replace("%3A", ":")
+                        document.write("Time Recorded: " + time);
+                    </script>
                 </div>
             </div>
+            <div class="checkbox-style">
+                <div class="sigboxes">
+                    <strong>All Signitures</strong><br>
+                    Cardiac Arrest MD: <br>
+                    <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                </div>
+                <div class="sigboxes">
+                    Medical Preperation Nurse: <br>
+                    <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                </div>
+                <div class="sigboxes">
+                    Anesthesiologist: <br>
+                    <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                </div>
+                <div class="sigboxes bottom">
+                    Recording Nurse: <br>
+                    <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+                </div>
+            </div>
+        </div>
         </div>
     </form>
     <div class="print_btn">
