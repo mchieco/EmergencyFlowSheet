@@ -69,6 +69,7 @@ function getText() {
 
 }
 
+
 // function onSubmit() {
 //   //gets table
 //   var table = document.getElementById("data_table");

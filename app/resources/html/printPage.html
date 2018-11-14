@@ -156,30 +156,31 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="checkbox-style col-4">
-                Patient Outcome:<br />
-                <input type="radio" name="outcome" value="alive"> Alive </br>
-                <input type="radio" name="outcome" value="deceased"> Deceased </br>
-                <br />
-                Transferred To:<br />
-                <input type="radio" name="trans" value="icu"> ICU </br>
-                <input type="radio" name="trans" value="morgue"> Morgue </br>
-                <input type="radio" name="trans" value="other"> Other Facility </br>
-                <input type="radio" name="trans" value="stay"> Stayed on Unit </br>
-                <br />
-                Reason Resuscitation Ended:<br>
-                <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
-                <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
-                <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC)
+                Patient Outcome:<br>
+                <script>
+                document.write(sessionStorage.getItem("patient_outcome"));
+                </script>
                 <br>
-                <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
-                <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
+                Transferred To:
                 <br>
-                <input type="checkbox" id="family_notified" value="family_notified"> Family Notified <br>
-                <input type="checkbox" id="family_notified_event" value="family_notified_event"> of Event <br>
-                <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome"> of Outcome<br>
-                Time Recorded: <br>
-                <input type="time" name="time" required><br>
+                <script>
+                document.write(sessionStorage.getItem("transferred_to"));
+                </script>
                 <br>
+                Reason Resuscitation Ended:
+                <br>
+                <script>
+                document.write(sessionStorage.getItem("resuscitation_ended"));
+                </script>
+                <br>
+                <script>
+                document.write(sessionStorage.getItem("family_notified"));
+                </script>
+                <br>
+                <script>
+                var time = getParams().time.replace("%3A", ":")
+                document.write("Time: " + time);
+                </script>
             </div>
             <div class="checkbox-style">
                 <div class="sigboxes">

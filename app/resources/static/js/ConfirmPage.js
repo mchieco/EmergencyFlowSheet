@@ -156,6 +156,65 @@ function addRows(amount) {
 };
 
 function onSubmit() {
+  getTable();
+  getRadio();
+  getCheckBox();
+}
+
+function getCheckBox(){
+  //checks which checkboxs were selected
+  if (document.getElementById("family_notified_outcome").checked) {
+    sessionStorage.setItem("family_notified", "Family was notified of the outcome");
+  } else if (document.getElementById("family_notified_event").checked) {
+    sessionStorage.setItem("family_notified", "Family was notified of the event");
+  } else if(document.getElementById("family_notified").checked){
+    sessionStorage.setItem("family_notified", "Family was notified");
+  } else {
+    sessionStorage.setItem("family_notified", "Family was not notified");
+  }
+}
+
+function getRadio(){
+  //checks if each radio button is submitted
+  //if the radio button is checked it submits the value into sessionStorage
+
+  //checks the radio buttons for patient outcome
+  if(document.getElementById("p_r1").checked){
+    sessionStorage.setItem("patient_outcome", document.getElementById("p_r1").value);
+  } else if(document.getElementById("p_r2").checked){
+    sessionStorage.setItem("patient_outcome", document.getElementById("p_r2").value);
+  } else {
+    sessionStorage.setItem("patient_outcome", "Patient Outcome not selected");
+  }
+  //checks the radio buttons for transferred to
+  if(document.getElementById("t_r1").checked){
+    sessionStorage.setItem("transferred_to", document.getElementById("t_r1").value);
+  } else if(document.getElementById("t_r2").checked){
+    sessionStorage.setItem("transferred_to", document.getElementById("t_r2").value);
+  } else if(document.getElementById("t_r3").checked){
+    sessionStorage.setItem("transferred_to", document.getElementById("t_r3").value);
+  } else if(document.getElementById("t_r4").checked){
+    sessionStorage.setItem("transferred_to", document.getElementById("t_r4").value);
+  } else {
+    sessionStorage.setItem("transferred_to", "Transferred to not selected");
+  }
+
+  //checks the radio buttons for reason resuscitation ended
+  if(document.getElementById("e_r1").checked){
+    sessionStorage.setItem("resuscitation_ended", document.getElementById("e_r1").value);
+  } else if(document.getElementById("e_r2").checked){
+    sessionStorage.setItem("resuscitation_ended", document.getElementById("e_r2").value);
+  } else if(document.getElementById("e_r3").checked){
+    sessionStorage.setItem("resuscitation_ended", document.getElementById("e_r3").value);
+  } else if(document.getElementById("e_r4").checked){
+    sessionStorage.setItem("resuscitation_ended", document.getElementById("e_r4").value);
+  } else {
+    sessionStorage.setItem("resuscitation_ended", "Reason resuscitation ended not selected");
+  }
+
+}
+
+function getTable() {
   //gets table
   var table = document.getElementById("data_table");
   var tableData = "";
@@ -177,7 +236,6 @@ function onSubmit() {
   //passes the table in a string with
   sessionStorage.setItem("data", tableData);
 }
-
 //sets the current date and time
 var currentdate = new Date();
 var currDate = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear();

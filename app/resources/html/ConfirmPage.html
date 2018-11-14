@@ -132,27 +132,27 @@
     <div class="row justify-content-between">
       <div class="checkbox-style col-4">
         Patient Outcome:<br />
-        <input type="radio" name="outcome" value="alive"> Alive </br>
-        <input type="radio" name="outcome" value="deceased"> Deceased </br>
+        <input type="radio" id="p_r1" name="outcome" value="Alive"> Alive </br>
+        <input type="radio" id="p_r2" name="outcome" value="Deceased"> Deceased </br>
         <br />
         Transferred To:<br />
-        <input type="radio" name="trans" value="icu"> ICU </br>
-        <input type="radio" name="trans" value="morgue"> Morgue </br>
-        <input type="radio" name="trans" value="other"> Other Facility </br>
-        <input type="radio" name="trans" value="stay"> Stayed on Unit </br>
+        <input type="radio" id="t_r1" name="trans" value="ICU"> ICU </br>
+        <input type="radio" id="t_r2" name="trans" value="Morgue"> Morgue </br>
+        <input type="radio" id="t_r3" name="trans" value="Other Facility"> Other Facility </br>
+        <input type="radio" id="t_r4" name="trans" value="Stayed on Unit"> Stayed on Unit </br>
         <br />
         Reason Resuscitation Ended:<br>
-        <input type="radio" name="reason" value="circualtion_returned"> Return of Circulation<br>
-        <input type="radio" name="reason" value="family_restrictions"> Restrictions by Family<br>
-        <input type="radio" name="reason" value="efforts_terminated"> Efforts Terminated (No sustained ROC) <br>
-        <input type="radio" name="reason" value="medical_futility"> Medical Futility <br>
-        <input type="radio" name="reason" value="advance_directive"> Advance Directive <br>
+        <input type="radio" id="e_r1" name="reason" value="Return of Circulation"> Return of Circulation<br>
+        <input type="radio" id="e_r2" name="reason" value="Restrictions by Family"> Restrictions by Family<br>
+        <input type="radio" id="e_r3" name="reason" value="Efforts Terminated (No sustained ROC)"> Efforts Terminated (No sustained ROC) <br>
+        <input type="radio" id="e_r4" name="reason" value="Medical Futility"> Medical Futility <br>
+        <input type="radio" id="e_r5" name="reason" value="Advance Directive"> Advance Directive <br>
         <br>
-        <input type="checkbox" id="family_notified" value="family_notified"> Family Notified <br>
-        <input type="checkbox" id="family_notified_event" value="family_notified_event"> of Event <br>
-        <input type="checkbox" id="family_notified_outcome" value="family_notified_outcome"> of Outcome<br>
+        <input type="checkbox" id="family_notified" value="Family Notified"> Family Notified <br>
+        <input type="checkbox" id="family_notified_event" value="of Event"> of Event <br>
+        <input type="checkbox" id="family_notified_outcome" value="of Outcome"> of Outcome<br>
         Time Recorded: <br>
-        <input type="time" name="time" required><br>
+        <input type="time" id="time" name="time" required><br>
         <br>
       </div>
     </div>
