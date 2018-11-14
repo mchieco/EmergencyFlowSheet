@@ -40,7 +40,7 @@ function textBoxKeyPress() {
   //move info to table
   var textBox = document.getElementById('input_box');
   var table = document.getElementById("datatable");
-  var i = 2;
+  var i = 1;
   // add a new row
   var row = table.insertRow(i);
   // add a cell to row
@@ -54,7 +54,6 @@ function textBoxKeyPress() {
   // add info to cells
   cell1.innerHTML = getCurrTime();
   col1Cont = col1Cont + setNotes(getCurrTime());
-  sessionStorage.setItem('col1Cont', col1Cont);
 
   // input into rythm
   var rythm = document.getElementById("rythmType");
@@ -63,7 +62,6 @@ function textBoxKeyPress() {
   }
   cell2.innerHTML = rythm.options[rythm.selectedIndex].text;
   col2Cont = col2Cont + setNotes(rythm.options[rythm.selectedIndex].text);
-  sessionStorage.setItem('col2Cont', col2Cont);
 
   // input into meds
   var meds = document.getElementById("medicationType");
@@ -72,7 +70,6 @@ function textBoxKeyPress() {
   }
   cell3.innerHTML = meds.options[meds.selectedIndex].text;
   col3Cont = col3Cont + setNotes(meds.options[meds.selectedIndex].text);
-  sessionStorage.setItem('col3Cont', col3Cont);
 
   // input into dose
   var dose = document.getElementById("doseType");
@@ -81,7 +78,6 @@ function textBoxKeyPress() {
   }
   cell4.innerHTML = dose.options[dose.selectedIndex].text;
   col4Cont = col4Cont + setNotes(dose.options[dose.selectedIndex].text);
-  sessionStorage.setItem('col4Cont', col4Cont);
 
   // input into iv
   var iv = document.getElementById("airway");
@@ -90,7 +86,6 @@ function textBoxKeyPress() {
   }
   cell5.innerHTML = iv.options[iv.selectedIndex].text;
   col5Cont = col5Cont + setNotes(iv.options[iv.selectedIndex].text);
-  sessionStorage.setItem('col5Cont', col5Cont);
 
   // input into defib joules
   var shock = document.getElementById("shockType");
@@ -99,7 +94,6 @@ function textBoxKeyPress() {
   }
   cell6.innerHTML = shock.options[shock.selectedIndex].text;
   col6Cont = col6Cont + setNotes(shock.options[shock.selectedIndex].text);
-  sessionStorage.setItem('col6Cont', col6Cont);
 
   //removes text and saves it to var
   var text = textBox.value.replace(/\n/, '');
@@ -109,10 +103,9 @@ function textBoxKeyPress() {
 
   strTable = strTable + setNotes(text);
 
+  //adds a row
   tableRows++;
 
-  sessionStorage.setItem('strTable', strTable);
-  sessionStorage.setItem('tableRows', tableRows);
   //keeps from submitting form
   return false;
 };
@@ -174,184 +167,43 @@ function ResetButton() {
 
 //start compression functionality
 function startCompressions() {
-  updateDate();
-  updateTime();
-  //move info to table
-  var textBox = document.getElementById('input_box');
-  var table = document.getElementById("datatable");
-  var i = 1;
-  // add a new row
-  var row = table.insertRow(i);
-  // add a cell to row
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  var cell7 = row.insertCell(6);
-  // add info to cells
-  cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(getCurrTime());
-  sessionStorage.setItem('col1Cont', col1Cont);
 
-  // input into rythm
-  cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(" ");
-  sessionStorage.setItem('col2Cont', col2Cont);
+  addEmptyCells("Compressions Started");
 
-  // input into meds
-  cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(" ");
-  sessionStorage.setItem('col3Cont', col3Cont);
-
-  // input into dose
-  cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(" ");
-  sessionStorage.setItem('col4Cont', col4Cont);
-
-  // input into iv
-  cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(" ");
-  sessionStorage.setItem('col5Cont', col5Cont);
-
-  // input into defib joules
-  cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(" ");
-  sessionStorage.setItem('col6Cont', col6Cont);
-  text = "Compressions Started";
-  cell7.innerHTML = text;
-  strTable = strTable + setNotes(text);
-
-  tableRows++;
-
-  sessionStorage.setItem('strTable', strTable);
-  sessionStorage.setItem('tableRows', tableRows);
   //keeps from submitting form
   return false;
 };
 
 //end compression button functionality
 function endCompressions() {
-  updateDate();
-  updateTime();
-  //move info to table
-  var textBox = document.getElementById('input_box');
-  var table = document.getElementById("datatable");
-  var i = 1;
-  // add a new row
-  var row = table.insertRow(i);
-  // add a cell to row
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  var cell7 = row.insertCell(6);
-  // add info to cells
-  cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(getCurrTime());
-  sessionStorage.setItem('col1Cont', col1Cont);
 
-  // input into rythm
-  cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(" ");
-  sessionStorage.setItem('col2Cont', col2Cont);
+  addEmptyCells("Compressions Ended");
 
-  // input into meds
-  cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(" ");
-  sessionStorage.setItem('col3Cont', col3Cont);
-
-  // input into dose
-  cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(" ");
-  sessionStorage.setItem('col4Cont', col4Cont);
-
-  // input into iv
-  cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(" ");
-  sessionStorage.setItem('col5Cont', col5Cont);
-
-  // input into defib joules
-  cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(" ");
-  sessionStorage.setItem('col6Cont', col6Cont);
-
-  text = "Compressions Ended";
-  cell7.innerHTML = text;
-  strTable = strTable + setNotes(text);
-  tableRows++;
-
-  sessionStorage.setItem('strTable', strTable);
-  sessionStorage.setItem('tableRows', tableRows);
   //keeps from submitting form
   return false;
 };
 
 //start IV button functionality
 function startIV() {
-  updateDate();
-  updateTime();
-  //move info to table
-  var textBox = document.getElementById('input_box');
-  var table = document.getElementById("datatable");
-  var i = 1;
-  // add a new row
-  var row = table.insertRow(i);
-  // add a cell to row
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  var cell7 = row.insertCell(6);
-  // add info to cells
-  cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(getCurrTime());
-  sessionStorage.setItem('col1Cont', col1Cont);
 
-  // input into rythm
-  cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(" ");
-  sessionStorage.setItem('col2Cont', col2Cont);
+  addEmptyCells("IV Started");
 
-  // input into meds
-  cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(" ");
-  sessionStorage.setItem('col3Cont', col3Cont);
 
-  // input into dose
-  cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(" ");
-  sessionStorage.setItem('col4Cont', col4Cont);
-
-  // input into iv
-  cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(" ");
-  sessionStorage.setItem('col5Cont', col5Cont);
-
-  // input into defib joules
-  cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(" ");
-  sessionStorage.setItem('col6Cont', col6Cont);
-
-  text = "IV Started";
-  cell7.innerHTML = text;
-  strTable = strTable + setNotes(text);
-  tableRows++;
-
-  sessionStorage.setItem('strTable', strTable);
-  sessionStorage.setItem('tableRows', tableRows);
   //keeps from submitting form
   return false;
 };
 
 //end IV button functionality
 function endIV() {
-  updateDate();
+
+  addEmptyCells("IV Ended");
+
+  //keeps from submitting form
+  return false;
+};
+
+//adds the empty cells and the text depending on which button was clicked
+function addEmptyCells(text) {
   updateTime();
   //move info to table
   var textBox = document.getElementById('input_box');
@@ -367,43 +219,33 @@ function endIV() {
   var cell5 = row.insertCell(4);
   var cell6 = row.insertCell(5);
   var cell7 = row.insertCell(6);
-  // add info to cells
+
   cell1.innerHTML = getCurrTime();
-  col1Cont = col1Cont + setNotes(getCurrTime());
-  sessionStorage.setItem('col1Cont', col1Cont);
-
-  // input into rythm
-  cell2.innerHTML = " ";
-  col2Cont = col2Cont + setNotes(" ");
-  sessionStorage.setItem('col2Cont', col2Cont);
-
-  // input into meds
-  cell3.innerHTML = " ";
-  col3Cont = col3Cont + setNotes(" ");
-  sessionStorage.setItem('col3Cont', col3Cont);
-
-  // input into dose
-  cell4.innerHTML = " ";
-  col4Cont = col4Cont + setNotes(" ");
-  sessionStorage.setItem('col4Cont', col4Cont);
-
-  // input into iv
+  cell2.innerHTML = "";
+  cell3.innerHTML = "";
+  cell4.innerHTML = "";
   cell5.innerHTML = "";
-  col5Cont = col5Cont + setNotes(" ");
-  sessionStorage.setItem('col5Cont', col5Cont);
-
-  // input into defib joules
-  cell6.innerHTML = " ";
-  col6Cont = col6Cont + setNotes(" ");
-  sessionStorage.setItem('col6Cont', col6Cont);
-
-  text = "IV Ended";
+  cell6.innerHTML = "";
   cell7.innerHTML = text;
+
+  col1Cont = col1Cont + setNotes(getCurrTime());
+  col2Cont = col2Cont + setNotes(" ");
+  col3Cont = col3Cont + setNotes(" ");
+  col4Cont = col4Cont + setNotes(" ");
+  col5Cont = col5Cont + setNotes(" ");
+  col6Cont = col6Cont + setNotes(" ");
   strTable = strTable + setNotes(text);
   tableRows++;
+}
 
+//sends the info in session storage
+function onSubmit() {
+  sessionStorage.setItem('col1Cont', col1Cont);
+  sessionStorage.setItem('col2Cont', col2Cont);
+  sessionStorage.setItem('col3Cont', col3Cont);
+  sessionStorage.setItem('col4Cont', col4Cont);
+  sessionStorage.setItem('col5Cont', col5Cont);
+  sessionStorage.setItem('col6Cont', col6Cont);
   sessionStorage.setItem('strTable', strTable);
   sessionStorage.setItem('tableRows', tableRows);
-  //keeps from submitting form
-  return false;
-};
+}
