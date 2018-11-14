@@ -159,6 +159,7 @@ function onSubmit() {
   getTable();
   getRadio();
   getCheckBox();
+  console.log(sessionStorage.getItem("family_notified"));
 }
 
 function getCheckBox(){
@@ -236,7 +237,6 @@ function getTable() {
   //passes the table in a string with
   sessionStorage.setItem("data", tableData);
   sessionStorage.setItem("comments", document.getElementById("comments").value)
-  sessionStorage.setItem("allergies", document.getElementById("allergies").value)
 }
 //sets the current date and time
 var currentdate = new Date();

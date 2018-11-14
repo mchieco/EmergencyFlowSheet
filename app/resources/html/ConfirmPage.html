@@ -100,7 +100,11 @@
     <br />
     <script>
       //writes the allegies from the data input page
-      document.write(sessionStorage.getItem("allergies"));
+      var allergies = sessionStorage.getItem("allergies")
+      if(allergies == ""){
+        allergies = "There are no allergies";
+      }
+      document.write(allergies);
     </script>
     <br>
     <strong>Comments:</strong>
@@ -157,8 +161,9 @@
 
 
     <!--Submit Button -->
-    <div class="submit_btn" onclick="onSubmit()" style="text-align: center">
-      <input style="width: 200px; border: 1px solid #D3D3D3;" type="submit" id="submit_btn" value="Submit" onsubmit="return confirm('Once you submit you cannot change without appenind, do you still wish to submit?');" />
+
+    <div class="submit_btn"style="text-align: center">
+      <input style="width: 200px; border: 1px solid #D3D3D3;" type="submit" id="submit_btn" value="Submit"  onclick="onSubmit()" onsubmit="return confirm('Once you submit you cannot change without appenind, do you still wish to submit?');" />
     </div>
   </form>
 

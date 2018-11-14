@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
   rowAmount++;
   rowAmount++;
 
-  console.log(rowAmount);
 
   var rowLoc = 1;
   var cellLoc = 0;
@@ -54,42 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //gets the info for the table
 var tableInfo = sessionStorage.getItem("data");
-console.log(tableInfo);
 function getText() {
   var loc = tableInfo.indexOf("--");
-  console.log(loc);
   if (loc == -1) {
     var text = tableInfo;
   } else {
     var text = tableInfo.substring(0, loc);
     tableInfo = tableInfo.substring(loc+2, tableInfo.length);
   }
-  console.log(tableInfo);
   return text;
 
 }
-
-
-// function onSubmit() {
-//   //gets table
-//   var table = document.getElementById("data_table");
-//   var tableData = "";
-//   var cellCount = 7;
-//
-//   //cycles through the tables rows
-//   for (var z = 0; z < rowCount; z++) {
-//     var cells = table.rows.item(z).cells;
-//
-//     //cycles through the rows cells
-//     for(var j = 0; j < cellCount; j++) {
-//       var cellVal = cells.item(j).innerHTML;
-//       //adds the data to the string with a -- as key to indicate a new cell was entered
-//       tableData = tableData + "--" + cellVal;
-//     }
-//   }
-//   //removes the header form the string
-//   tableData = tableData.substring(63,tableData.length);
-//   //passes the table in a string with
-//   sessionStorage.setItem("data", tableData);
-// }
-//
