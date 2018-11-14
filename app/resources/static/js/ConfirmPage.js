@@ -235,6 +235,8 @@ function getTable() {
   tableData = tableData.substring(63,tableData.length);
   //passes the table in a string with
   sessionStorage.setItem("data", tableData);
+  sessionStorage.setItem("comments", document.getElementById("comments").value)
+  sessionStorage.setItem("allergies", document.getElementById("allergies").value)
 }
 //sets the current date and time
 var currentdate = new Date();
