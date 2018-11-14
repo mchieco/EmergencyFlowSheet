@@ -162,7 +162,7 @@ function onSubmit() {
   var cellCount = 7;
 
   //cycles through the tables rows
-  for (var z = 0; z < rowCount; z++) {
+  for (var z = 0; z < rowCount+1; z++) {
     var cells = table.rows.item(z).cells;
 
     //cycles through the rows cells
