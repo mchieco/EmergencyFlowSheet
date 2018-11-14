@@ -254,4 +254,5 @@ function onSubmit() {
   sessionStorage.setItem('col6Cont', col6Cont);
   sessionStorage.setItem('strTable', strTable);
   sessionStorage.setItem('tableRows', tableRows);
+  sessionStorage.setItem("allergies", document.getElementById("allergies").value)
 }
