@@ -23,6 +23,12 @@ function enterKeyPress(e) {
   }
 }
 
+function formKeyPress(e) {
+  if (e.keyCode == 13 || event.which == 13) {
+    e.preventDefault();
+  }
+}
+
 function validateButton(type) {
   if (type.selectedIndex == 0) {
     var selectedText = type.options[type.selectedIndex].text;

@@ -21,7 +21,7 @@
 
 <body>
 
-  <form action="ConfirmPage.html" method="GET" id="my_form">
+  <form action="ConfirmPage.html" method="GET" id="my_form" onkeypress="formKeyPress(event)">
     <div id="wrapper" class="padding-bottom">
       <label for="pName">
         <span>Patient Name</span>
@@ -142,7 +142,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Type Here</span>
       </div>
-      <input type="text" class="form-control" id="input_box" aria-label="With textarea" onkeypress="return enterKeyPress()"></textarea>
+      <input type="text" class="form-control" id="input_box" aria-label="With textarea" onkeypress="return enterKeyPress(event)"></textarea>
 
       <!--Add Button -->
       <div>
