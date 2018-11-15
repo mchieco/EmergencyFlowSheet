@@ -76,11 +76,11 @@ input {
 }
 
 .btnreset {
-  display: inline-block;
+  display: block;
   margin-left: 25px;
   margin-top: 5px;
   height: 30px;
-  width: 100px;
+  /* width: 100px; */
 }
 
 .dropwidth {
