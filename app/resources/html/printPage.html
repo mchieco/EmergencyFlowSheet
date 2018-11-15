@@ -162,7 +162,7 @@
 
       <div class="checkbox-style">
         <div class="">
-          Patient Outcome:
+          <strong>Patient Outcome:</strong>
           <br>
           <br>
           <script>
@@ -170,7 +170,7 @@
           </script>
           <br>
           <br>
-          Transferred To:
+          <strong>Transferred To:</strong>
           <br>
           <br>
           <script>
@@ -178,7 +178,7 @@
           </script>
           <br>
           <br>
-          Reason Resuscitation Ended:
+          <strong> Resuscitation Ended:</strong>
           <br>
           <br>
           <script>
@@ -186,15 +186,19 @@
           </script>
           <br>
           <br>
+          <strong>
           <script>
             document.write(sessionStorage.getItem("family_notified"));
           </script>
+          </strong>
           <br>
           <br>
+          <strong>
           <script>
             var time = getParams().time.replace("%3A", ":")
             document.write("Time Recorded: " + time);
           </script>
+          </strong>
         </div>
       </div>
 
