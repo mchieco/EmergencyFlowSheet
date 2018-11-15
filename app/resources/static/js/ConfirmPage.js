@@ -273,3 +273,11 @@ function getCurrDate() {
 function getCurrTime() {
   return currTime;
 }
+
+function fixParams(text){
+  while(text.indexOf("+") != -1){
+    text = text.replace("+"," ");
+    fixParams(text);
+  }
+  return text;
+}

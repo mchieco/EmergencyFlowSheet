@@ -28,22 +28,22 @@
         <strong>Date:</strong>
         <br />
         <script>
-          document.write(sessionStorage.getItem('date'));
-                </script>
+        document.write(sessionStorage.getItem('date'));
+        </script>
       </form>
       <form>
         <strong>Time:</strong>
         <br />
         <script>
-          document.write(sessionStorage.getItem("time"));
-                </script>
+        document.write(sessionStorage.getItem("time"));
+        </script>
       </form>
       <form>
         <strong>Location:</strong>
         <br />
         <script>
-          document.write(sessionStorage.getItem("location"));
-                </script>
+        document.write(sessionStorage.getItem("location"));
+        </script>
       </form>
     </div>
     <div class='boxed'>
@@ -51,25 +51,28 @@
         <strong>Cardiac Arrest MD:</strong>
         <br />
         <script>
-          name = getParams().MD.replace("+", " ");
-                    document.write(name);
-                </script>
+        name = getParams().MD;
+        name = fixParams(name);
+        document.write(name);
+        </script>
       </form>
       <form>
         <strong>Anesthesiologist:</strong>
         <br />
         <script>
-          name = getParams().Anesthesiologist.replace("+", " ");
-                    document.write(name);
-                </script>
+        name = getParams().Anesthesiologist;
+        name = fixParams(name);
+        document.write(name);
+        </script>
       </form>
       <form>
         <strong>Recording Nurse:</strong>
         <br />
         <script>
-          name = getParams().RecNurse.replace("+", " ");
-                    document.write(name);
-                </script>
+        name = getParams().RecNurse;
+        name = fixParams(name);
+        document.write(name);
+        </script>
       </form>
     </div>
     <div class="boxed">
@@ -77,17 +80,19 @@
         <strong>Medical Preperation Nurse:</strong>
         <br />
         <script>
-          name = getParams().MedPrep.replace("+", " ");
-                    document.write(name);
-                </script>
+        name = getParams().MedPrep;
+        name = fixParams(name);
+        document.write(name);
+        </script>
       </form>
       <form>
         <strong>Other:</strong>
         <br />
         <script>
-          name = getParams().MedPrep.replace("+", " ");
-                    document.write(name);
-                </script>
+        name = getParams().Other;
+        name = fixParams(name);
+        document.write(name);
+        </script>
       </form>
     </div>
     <div class="boxed">
@@ -95,16 +100,16 @@
         <strong>Patient Name:</strong>
         <br />
         <script>
-          name = sessionStorage.getItem("name");
-                    document.write(name);
-                </script>
+        name = sessionStorage.getItem("name");
+        document.write(name);
+        </script>
       </form>
       <form>
         <strong>MR#:</strong>
         <br />
         <script>
-          document.write(sessionStorage.getItem("mr"));
-                </script>
+        document.write(sessionStorage.getItem("mr"));
+        </script>
       </form>
     </div>
 
@@ -114,124 +119,124 @@
     <strong>Patient Allergies:</strong>
     <br />
     <script>
-      if (sessionStorage.getItem("allergies") == "") {
-                document.write("No allergies");
-            } else {
-                document.write(sessionStorage.getItem("allergies"));
-            }
-        </script>
+    if (sessionStorage.getItem("allergies") == "") {
+      document.write("No allergies");
+    } else {
+      document.write(sessionStorage.getItem("allergies"));
+    }
+    </script>
   </form>
   <strong>Comments:</strong>
   <br>
   <script>
-    if (getParams().comments == "") {
-            document.write("No comments");
-        } else {
-            document.write(sessionStorage.getItem("comments"));
-        }
-    </script>
-  </form>
-  </div>
+  if (getParams().comments == "") {
+    document.write("No comments");
+  } else {
+    document.write(sessionStorage.getItem("comments"));
+  }
+  </script>
+</form>
+</div>
 
-  <!--Table-->
-  <div class="padding-top">
-    <table id="data" class="table table-bordered">
-      <thead>
-        <tr>
-          <th contenteditable="false" scope="col">Time</th>
-          <th contenteditable="false" scope="col">Rhythm</th>
-          <th contenteditable="false" scope="col">Medication</th>
-          <th contenteditable="false" scope="col">Dose</th>
-          <th contenteditable="false" scope="col">Airway</th>
-          <th contenteditable="false" scope="col">Defib Joules</th>
-          <th contenteditable="false" scope="col">Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
-  <table>
+<!--Table-->
+<div class="padding-top">
+  <table id="data" class="table table-bordered">
+    <thead>
+      <tr>
+        <th contenteditable="false" scope="col">Time</th>
+        <th contenteditable="false" scope="col">Rhythm</th>
+        <th contenteditable="false" scope="col">Medication</th>
+        <th contenteditable="false" scope="col">Dose</th>
+        <th contenteditable="false" scope="col">Airway</th>
+        <th contenteditable="false" scope="col">Defib Joules</th>
+        <th contenteditable="false" scope="col">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
   </table>
-  </div>
-  <table>
-  </table>
-  <form>
+</div>
+<table>
+</table>
+</div>
+<table>
+</table>
+<form>
 
-    <div class="row row-justify-content-center">
+  <div class="row row-justify-content-center">
 
-      <div class="checkbox-style">
-        <div class="">
-          <strong>Patient Outcome:</strong>
-          <br>
-          <br>
+    <div class="checkbox-style">
+      <div class="">
+        <strong>Patient Outcome:</strong>
+        <br>
+        <br>
+        <script>
+        document.write(sessionStorage.getItem("patient_outcome"));
+        </script>
+        <br>
+        <br>
+        <strong>Transferred To:</strong>
+        <br>
+        <br>
+        <script>
+        document.write(sessionStorage.getItem("transferred_to"));
+        </script>
+        <br>
+        <br>
+        <strong> Resuscitation Ended:</strong>
+        <br>
+        <br>
+        <script>
+        document.write(sessionStorage.getItem("resuscitation_ended"));
+        </script>
+        <br>
+        <br>
+        <strong>
           <script>
-            document.write(sessionStorage.getItem("patient_outcome"));
+          document.write(sessionStorage.getItem("family_notified"));
           </script>
-          <br>
-          <br>
-          <strong>Transferred To:</strong>
-          <br>
-          <br>
+        </strong>
+        <br>
+        <br>
+        <strong>
           <script>
-            document.write(sessionStorage.getItem("transferred_to"));
+          var time = getParams().time.replace("%3A", ":")
+          document.write("Time Recorded: " + time);
           </script>
-          <br>
-          <br>
-          <strong> Resuscitation Ended:</strong>
-          <br>
-          <br>
-          <script>
-            document.write(sessionStorage.getItem("resuscitation_ended"));
-          </script>
-          <br>
-          <br>
-          <strong>
-          <script>
-            document.write(sessionStorage.getItem("family_notified"));
-          </script>
-          </strong>
-          <br>
-          <br>
-          <strong>
-          <script>
-            var time = getParams().time.replace("%3A", ":")
-            document.write("Time Recorded: " + time);
-          </script>
-          </strong>
-        </div>
+        </strong>
       </div>
-
-      <div class="checkbox-style">
-        <div class="sigboxes">
-          <strong>All Signitures</strong><br>
-          Cardiac Arrest MD: <br>
-          <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-        </div>
-        <div class="sigboxes">
-          Medical Preperation Nurse: <br>
-          <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-        </div>
-        <div class="sigboxes">
-          Anesthesiologist: <br>
-          <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-        </div>
-        <div class="sigboxes bottom">
-          Recording Nurse: <br>
-          <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
-        </div>
-      </div>
-
     </div>
 
-  </form>
-  <div class="print_btn">
-    <input style="width: 200px; border: 1px solid #D3D3D3;" id="printPageButton" type="button" onclick="window.print();" value="Print" />
+    <div class="checkbox-style">
+      <div class="sigboxes">
+        <strong>All Signitures</strong><br>
+        Cardiac Arrest MD: <br>
+        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+      </div>
+      <div class="sigboxes">
+        Medical Preperation Nurse: <br>
+        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+      </div>
+      <div class="sigboxes">
+        Anesthesiologist: <br>
+        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+      </div>
+      <div class="sigboxes bottom">
+        Recording Nurse: <br>
+        <div style="width:500px;height:100px;border:1px solid #D3D3D3;"> </div>
+      </div>
+    </div>
+
   </div>
-  <div class="footer">
-    <p>Quinnipiac University Emergency Flow Sheet</p>
-  </div>
-  </form>
+
+</form>
+<div class="print_btn">
+  <input style="width: 200px; border: 1px solid #D3D3D3;" id="printPageButton" type="button" onclick="window.print();" value="Print" />
+</div>
+<div class="footer">
+  <p>Quinnipiac University Emergency Flow Sheet</p>
+</div>
+</form>
 
 </body>
 

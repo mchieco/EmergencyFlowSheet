@@ -64,3 +64,11 @@ function getText() {
   return text;
 
 }
+
+function fixParams(text){
+  while(text.indexOf("+") != -1){
+    text = text.replace("+"," ");
+    fixParams(text);
+  }
+  return text;
+}

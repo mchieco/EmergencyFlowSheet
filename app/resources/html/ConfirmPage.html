@@ -47,8 +47,10 @@
         <br />
         <script>
           //writes the location from the data input page
-          document.write(getParams().Location.replace("+", " "));
-          sessionStorage.setItem("location", getParams().Location.replace("+", " "));
+          loc = getParams().Location;
+          loc = fixParams(loc);
+          document.write(loc);
+          sessionStorage.setItem("location", loc);
         </script>
         <br />
       </div>
@@ -80,16 +82,19 @@
         <br />
         <script>
           //writes the name from the data input page
-          name = getParams().pName.replace("+", " ");
-          sessionStorage.setItem("name", name);
+          name = getParams().pName;
+          name = fixParams(name);
+          sessionStorage.setItem("name",name);
           document.write(name);
         </script>
         <br />
         <strong>MR#:</strong>
         <br />
         <script>
-          document.write(getParams().MR.replace("+", " "));
-          sessionStorage.setItem("mr", getParams().MR.replace("+", " "));
+          mr = getParams().MR;
+          mr = fixParams(mr);
+          document.write(mr);
+          sessionStorage.setItem("mr", mr);
         </script>
         <br />
       </div>
