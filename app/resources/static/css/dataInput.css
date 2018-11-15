@@ -71,15 +71,15 @@ input {
 .btnadd {
   display: block;
   margin-left: 25px;
-  height: 50px;
+  height: 105px;
   width: 100px;
 }
 
 .btnreset {
-  display: block;
+  display: inline-block;
   margin-left: 25px;
   margin-top: 5px;
-  height: 50px;
+  height: 30px;
   width: 100px;
 }
 

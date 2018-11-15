@@ -62,7 +62,7 @@
     <div class="btn-group padding-top" id="wrapper" role="group" aria-label="Button group with nested dropdown">
 
       <div class="col-auto my-1 dropwidth">
-        <label class="mr-sm-2" for="rythmSelectGroup">Rhythm</label>
+        <center><label class="mr-sm-2" for="rythmSelectGroup">Rhythm</label></center>
         <select class="custom-select mr-sm-2" id="rythmType">
           <option value="0" selected="selected"></option>
           <option value="1">Asystole</option>
@@ -73,7 +73,7 @@
       </div>
 
       <div class="col-auto my-1 dropwidth">
-        <label class="mr-sm-2" for="rythmSelectGroup">Medication</label>
+        <center><label class="mr-sm-2" for="rythmSelectGroup">Medication</label></center>
         <select class="custom-select mr-sm-2" id="medicationType">
           <option value="0" selected="selected"></option>
           <option value="1">Adenosin</option>
@@ -90,7 +90,7 @@
       </div>
 
       <div class="col-auto my-1 dropwidth">
-        <label class="mr-sm-2" for="rythmSelectGroup">Dose</label>
+        <center><label class="mr-sm-2" for="rythmSelectGroup">Dose</label></center>
         <select class="custom-select mr-sm-2" id="doseType">
           <option value="0" selected="selected"></option>
           <option value="1">1 mg</option>
@@ -110,7 +110,7 @@
       </div>
 
       <div class="col-auto my-1 dropwidth">
-        <label class="mr-sm-2" for="rythmSelectGroup">Airway</label>
+        <center><label class="mr-sm-2" for="rythmSelectGroup">Airway</label></center>
         <select class="custom-select mr-sm-2" id="airway">
           <option selected="selected"></option>
           <option value="1">Intubated</option>
@@ -120,7 +120,7 @@
       </div>
 
       <div class="col-auto my-1 dropwidth">
-        <label class="mr-sm-2" for="rythmSelectGroup">Shock</label>
+        <center><label class="mr-sm-2" for="rythmSelectGroup">Shock</label></center>
         <select class="custom-select mr-sm-2" id="shockType">
           <option value="0" selected="selected"></option>
           <option value="1">200 Joules</option>
@@ -128,6 +128,9 @@
           <option value="3">360 Joules</option>
         </select>
       </div>
+
+      <button type="button" id="reset" class="btnreset" onclick="ResetButton()">Reset Dropdowns</button>
+
     </div>
 
     <div class="btn-group padding-top2" id="wrapper" role="group" aria-label="Button group with nested dropdown">
@@ -147,7 +150,6 @@
       <!--Add Button -->
       <div>
         <button type="button" class="btnadd" onclick="textBoxKeyPress()">Add</button>
-        <button type="button" id="reset" class="btnreset" onclick="ResetButton()">Reset Dropdowns</button>
       </div>
     </div>
 
