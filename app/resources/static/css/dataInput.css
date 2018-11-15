@@ -71,7 +71,7 @@ input {
 .btnadd {
   display: block;
   margin-left: 25px;
-  height: 50px;
+  height: 105px;
   width: 100px;
 }
 
@@ -79,8 +79,8 @@ input {
   display: block;
   margin-left: 25px;
   margin-top: 5px;
-  height: 50px;
-  width: 100px;
+  height: 30px;
+  /* width: 100px; */
 }
 
 .dropwidth {
