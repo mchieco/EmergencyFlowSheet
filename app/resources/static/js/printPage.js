@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 }, false);
 
-//gets the info for the table
+//gets the info for the table by seraching for the key -- then moving to the next cell
 var tableInfo = sessionStorage.getItem("data");
 function getText() {
   var loc = tableInfo.indexOf("--");
@@ -65,6 +65,7 @@ function getText() {
 
 }
 
+//removes the + in the URL parameters and sets them to spaces
 function fixParams(text){
   while(text.indexOf("+") != -1){
     text = text.replace("+"," ");

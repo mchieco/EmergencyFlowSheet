@@ -11,7 +11,7 @@ var col6Cont = "--";
 //sets the number of rows
 var tableRows = 0;
 
-//detects enter key presses
+//detects users key presses and on the enter key takes the input from the notes and adds it to the table
 function enterKeyPress(e) {
   e = e || window.event;
   if (e.keyCode == 13 || event.which == 13) {
@@ -23,6 +23,7 @@ function enterKeyPress(e) {
   }
 }
 
+//prevents the enter key from sending the user to the next page
 function formKeyPress(e) {
   if (e.keyCode == 13 || event.which == 13) {
     e.preventDefault();
@@ -117,7 +118,7 @@ function textBoxKeyPress() {
   return false;
 };
 
-//adds the key to indicate the next row was started
+//adds the key -- to indicate the next row was started
 function setNotes(text) {
   return "--" + text;
 }

@@ -48,6 +48,7 @@ function getParams() {
 };
 
 //finds the text to add to each cell
+//searches for the key of -- and creates a substring before and after each instance of --
 function addText(conts, key) {
   var loc1 = 0;
   var loc2 = conts.indexOf("--");
@@ -274,6 +275,7 @@ function getCurrTime() {
   return currTime;
 }
 
+//removes the + in the URL parameters and sets them to spaces
 function fixParams(text){
   while(text.indexOf("+") != -1){
     text = text.replace("+"," ");
