@@ -111,6 +111,7 @@ function textBoxKeyPress() {
 
   //adds a row
   tableRows++;
+  ResetButton();
 
   //keeps from submitting form
   return false;
