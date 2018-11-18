@@ -2,7 +2,7 @@
 
 The system is a web application so it requires no installation other than running the main file.
 
-First, Navigate to the DataInput.html file. This is the file that initiates the code process.
+First, Navigate to the DataInput.html file to do this follow app ==> resources ==> html ==> DataInput.html. This is the file that initiates the code process.
 
 Once you open the file, the date and time will automatically be filled in.
 
